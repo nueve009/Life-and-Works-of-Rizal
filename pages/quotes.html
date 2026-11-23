@@ -10,6 +10,8 @@
     <title>In His Own Words | José Rizal</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/main.js" defer></script>
+    <script src="../js/search-index.js" defer></script>
+    <script src="../js/search.js" defer></script>
     <script src="../js/quotes.js" defer></script>
   </head>
   <body>
@@ -92,7 +94,7 @@
       </section>
 
       <section class="quotes-grid" aria-label="Quotations by theme">
-        <article class="quote-card" data-theme="country">
+        <article class="quote-card" id="quote-1" data-theme="country">
           <span class="quote-theme">Country &amp; sacrifice</span>
           <blockquote>
             <p>My idolized country, sorrow of my sorrows,<br>Beloved Filipinas, hear my last good-bye.<br>There I leave you all, my parents, my loves.<br>I’ll go where there are no slaves, hangmen nor oppressors,<br>Where faith doesn’t kill, where the one who reigns is God.</p>
@@ -110,7 +112,7 @@
           <a class="quote-context" href="works.html#mi-ultimo-adios">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="country">
+        <article class="quote-card" id="quote-2" data-theme="country">
           <span class="quote-theme">Country &amp; sacrifice</span>
           <blockquote lang="es">
             <p>Sea, pues, cualquiera nuestra situación, amémosla siempre y no deseemos otra cosa que su bien.</p>
@@ -126,7 +128,7 @@
           <a class="quote-context" href="works.html#amor-patrio">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="country">
+        <article class="quote-card" id="quote-3" data-theme="country">
           <span class="quote-theme">Country &amp; sacrifice</span>
           <blockquote>
             <p>Hold high the brow serene, O youth, where now you stand;<br>Let the bright sheen<br>Of your grace be seen,<br>Fair hope of my fatherland!</p>
@@ -140,7 +142,7 @@
           <a class="quote-context" href="works.html#a-la-juventud-filipina">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="education">
+        <article class="quote-card" id="quote-4" data-theme="education">
           <span class="quote-theme">Education &amp; youth</span>
           <blockquote lang="es">
             <p>Por ella sacrifica su existencia<br>El mortal y el placido reposo;<br>Por ella nacer vence el arte y la ciencia<br>Que ciñen al humano lauro hermoso:<br>Y cual del alto monte en la eminencia<br>Brota el puro raudal de arroyo undoso;<br>Así la educación da sin mesura<br>A la patria do mora paz segura.</p>
@@ -156,7 +158,7 @@
           <a class="quote-context" href="works.html#por-la-educacion-recibe-lustre-la-patria">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="education">
+        <article class="quote-card" id="quote-5" data-theme="education">
           <span class="quote-theme">Education &amp; youth</span>
           <blockquote lang="tl">
             <p>Ñgayong tumugon kayo sa uhaw naming sigaw ñg ikagagaling ñg bayan; ñgayong nagpakita kayo ñg mabuting halimbawa sa kapuá dalagang nagnanasang paris ninyong mamulat ang mata at mahañgo sa pagkalugamí, sumisigla ang aming pag-asa, inaaglahì ang sakuná, sa pagka at kayo’y katulong na namin, panatag ang loob sapagtatagumpay.</p>
@@ -169,7 +171,7 @@
           <a class="quote-context" href="works.html#liham-sa-mga-kadalagahan-sa-malolos">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="education">
+        <article class="quote-card" id="quote-6" data-theme="education">
           <span class="quote-theme">Education &amp; youth</span>
           <blockquote>
             <p>My father was born in Binan, and he wished me to go there to continue the study of Latin, which I had just begun.</p>
@@ -183,7 +185,7 @@
           <a class="quote-context" href="works.html#rizal-s-own-story-of-his-life">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="reform">
+        <article class="quote-card" id="quote-7" data-theme="reform">
           <span class="quote-theme">Reform &amp; justice</span>
           <blockquote lang="es">
             <p>Todos ven, todos presienten, todos están convencidos de que aquello va mal, de que algo allí deja mucho que desear; unos lo atribuyen a una cosa, otros a otra.</p>
@@ -199,7 +201,7 @@
           <a class="quote-context" href="works.html#como-se-gobiernan-las-filipinas">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="reform">
+        <article class="quote-card" id="quote-8" data-theme="reform">
           <span class="quote-theme">Reform &amp; justice</span>
           <blockquote>
             <p>In order to read the destiny of a people, it is necessary to open the book of its past, and this, for the Philippines, may be reduced in general terms to what follows.</p>
@@ -213,7 +215,7 @@
           <a class="quote-context" href="works.html#filipinas-dentro-de-cien-anos">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="reform">
+        <article class="quote-card" id="quote-9" data-theme="reform">
           <span class="quote-theme">Reform &amp; justice</span>
           <blockquote>
             <p>I have dared to answer the calumnies that for centuries have been heaped upon us and upon our country.</p>
@@ -227,7 +229,7 @@
           <a class="quote-context" href="works.html#letters-to-ferdinand-blumentritt">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="exile">
+        <article class="quote-card" id="quote-10" data-theme="exile">
           <span class="quote-theme">Exile &amp; homesickness</span>
           <blockquote>
             <p>By the spreading beach where the sands are soft and fine,<br>At the foot of the mount in its mantle of green,<br>I have built my hut in the pleasant grove’s confine;<br>From the forest seeking peace and a calmness divine,<br>Rest for the weary brain and silence to my sorrow keen.</p>
@@ -241,7 +243,7 @@
           <a class="quote-context" href="works.html#mi-retiro">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="exile">
+        <article class="quote-card" id="quote-11" data-theme="exile">
           <span class="quote-theme">Exile &amp; homesickness</span>
           <blockquote>
             <p>Like to a leaf that is fallen and withered,<br>Tossed by the tempest from pole unto pole;<br>Thus roams the pilgrim abroad without purpose,<br>Roams without love, without country or soul.</p>
@@ -255,7 +257,7 @@
           <a class="quote-context" href="works.html#el-canto-del-viajero">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="exile">
+        <article class="quote-card" id="quote-12" data-theme="exile">
           <span class="quote-theme">Exile &amp; homesickness</span>
           <blockquote lang="es">
             <p>Y es que en mi triste aislamiento<br>Mi alma ni goza ni siente.</p>
@@ -271,7 +273,7 @@
           <a class="quote-context" href="works.html#me-piden-versos">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="work">
+        <article class="quote-card" id="quote-13" data-theme="work">
           <span class="quote-theme">Work &amp; service</span>
           <blockquote>
             <p>For his country in peace,<br>For his country in war,<br>Let the Filipino work,<br>Let him live, let him die.</p>
@@ -285,7 +287,7 @@
           <a class="quote-context" href="works.html#himno-al-trabajo">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="work">
+        <article class="quote-card" id="quote-14" data-theme="work">
           <span class="quote-theme">Work &amp; service</span>
           <blockquote>
             <p>Go forth, and then the sacred fire<br>Of thy genius to the laurel may aspire;<br>To spread around the fame,<br>And in victory acclaim,<br>Through wider spheres the human name.</p>
@@ -299,7 +301,7 @@
           <a class="quote-context" href="works.html#a-la-juventud-filipina">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="faith">
+        <article class="quote-card" id="quote-15" data-theme="faith">
           <span class="quote-theme">Faith &amp; consolation</span>
           <blockquote>
             <p>One beacon shines! — the star upon thy brow.<br>Sharp sin assails me; but thy look at length<br>Puts sin and grief and thoughts of death to flight!</p>
@@ -313,7 +315,7 @@
           <a class="quote-context" href="works.html#a-la-virgen-maria">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="faith">
+        <article class="quote-card" id="quote-16" data-theme="faith">
           <span class="quote-theme">Faith &amp; consolation</span>
           <blockquote>
             <p>Where faith doesn’t kill, where the one who reigns is God.</p>
@@ -331,7 +333,7 @@
           <a class="quote-context" href="works.html#mi-ultimo-adios">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="memory">
+        <article class="quote-card" id="quote-17" data-theme="memory">
           <span class="quote-theme">Memory &amp; friendship</span>
           <blockquote lang="es">
             <p>era una criatura fantástica, mitad ninfa, mitad sílfide, nacida a los rayos de la luna de Filipinas, en el misterio de sus augustos bosques, y al arrullo de las olas del vecino lago.</p>
@@ -347,7 +349,7 @@
           <a class="quote-context" href="works.html#mariang-makiling">View in context <span aria-hidden="true">→</span></a>
         </article>
 
-        <article class="quote-card" data-theme="memory">
+        <article class="quote-card" id="quote-18" data-theme="memory">
           <span class="quote-theme">Memory &amp; friendship</span>
           <blockquote>
             <p>Adieu, my best, my dearest friend, and never think ill of me!</p>

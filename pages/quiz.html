@@ -7,6 +7,8 @@
   <title>Quiz | José Rizal</title>
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/main.js" defer></script>
+  <script src="../js/search-index.js" defer></script>
+  <script src="../js/search.js" defer></script>
   <script src="../js/quiz.js" defer></script>
 </head>
 <body>
@@ -29,7 +31,7 @@
     <section class="page-heading">
       <p class="eyebrow">Check what you remember</p>
       <h1>Rizal knowledge quiz</h1>
-      <p>Choose a difficulty and answer five questions about Rizal’s life and works.</p>
+      <p>Choose a difficulty and answer ten questions about Rizal’s life and works. Every answer comes with a short explanation and a link for further study.</p>
     </section>
     <section class="quiz-panel" aria-label="Rizal quiz">
       <div id="level-selection">
@@ -47,6 +49,10 @@
             <strong>Hard</strong>
             <span>Try more detailed questions about his studies and life.</span>
           </button>
+          <button class="level-option" type="button" data-level="mixed">
+            <strong>Mixed review</strong>
+            <span>Ten questions drawn from all three difficulty levels.</span>
+          </button>
         </div>
       </div>
       <div id="quiz-content" hidden>
@@ -59,6 +65,7 @@
         <h2 id="question" tabindex="-1"></h2>
         <div id="answers" class="answer-list"></div>
         <p id="feedback" class="feedback" aria-live="polite"></p>
+        <a id="study-link" class="study-link" hidden></a>
         <button id="next-button" class="button" type="button" hidden>Next question <span aria-hidden="true">→</span></button>
       </div>
       <div id="results" class="results" hidden aria-live="polite">

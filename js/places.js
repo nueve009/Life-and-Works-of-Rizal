@@ -197,14 +197,21 @@
 
   applyFilter(filters[0], false);
 
-  const hash = window.location.hash.slice(1);
-  const hashId = hash.startsWith("place-") ? hash.slice(6) : hash;
-  if (select(hashId, { scroll: false, updateHash: false })) {
+  // Deep links work on load and when search results change the hash on this page.
+  function openFromHash(scroll) {
+    const hash = window.location.hash.slice(1);
+    const hashId = hash.startsWith("place-") ? hash.slice(6) : hash;
     const card = cards.find((candidate) => candidate.dataset.place === hashId);
-    if (card) {
-      card.scrollIntoView({ behavior: "auto", block: "center" });
+    if (!card) return false;
+    if (card.hidden) {
+      const allButton = filters.find((button) => button.dataset.region === "all");
+      if (allButton) applyFilter(allButton, false);
     }
-  } else {
+    return select(hashId, { scroll: Boolean(scroll), updateHash: false });
+  }
+
+  if (!openFromHash(false)) {
     select("calamba-binan", { scroll: false, updateHash: false });
   }
+  window.addEventListener("hashchange", () => openFromHash(true));
 })();
