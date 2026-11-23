@@ -440,6 +440,7 @@
   const emptyMessage = $("works-empty");
   const filterButtons = Array.from(document.querySelectorAll(".category-filter"));
   const panels = Array.from(document.querySelectorAll(".works-category"));
+  const grid = document.querySelector(".index-grid");
   let activeCategory = "all";
 
   function matchesQuery(work, query) {
@@ -457,6 +458,10 @@
       const rows = Array.from(panel.querySelectorAll(".works-list li"));
       panel.hidden = !rows.some((row) => !row.hidden);
     });
+
+    // Give a single visible category the whole row so it does not look stranded.
+    const singlePanel = activeCategory !== "all" || panels.filter((panel) => !panel.hidden).length === 1;
+    grid.classList.toggle("is-filtered", singlePanel);
 
     filterButtons.forEach((button) => {
       const category = button.dataset.category;
