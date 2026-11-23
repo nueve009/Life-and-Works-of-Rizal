@@ -8,7 +8,7 @@ An educational website that teaches people about the life and works of Dr. José
 
 - **Life timeline:** key events from his birth in Calamba (1861) to his execution in Bagumbayan (1896)
 - **Works:** summaries of _Noli Me Tangere_, _El Filibusterismo_, and _Mi Último Adiós_, with main characters and why each one matters
-- **Quiz:** multiple-choice questions to test what you learned
+- **Quiz:** easy, medium, and hard multiple-choice levels
 - **Sources:** the books and websites used for the facts
 
 ## Built with
@@ -22,11 +22,13 @@ No frameworks or installs needed.
 ## Project structure
 
 ```
-├── index.html        # Home page
-├── timeline.html     # Life timeline
-├── works.html        # His major works
-├── quiz.html         # Quiz
-├── sources.html      # Sources
+├── index.html        # Redirects to the pages folder
+├── pages/
+│   ├── index.html    # Home page
+│   ├── timeline.html # Life timeline
+│   ├── works.html    # His major works
+│   ├── quiz.html     # Quiz
+│   └── sources.html  # Sources
 ├── css/
 │   └── style.css     # Styles
 ├── js/
@@ -57,4 +59,4 @@ You can put the site online with Netlify, Vercel, or GitHub Pages. With Netlify 
 
 ## Credits
 
-Images used are from public domain sources such as Wikimedia Commons.
+Images include public-domain works and a CC BY-SA 4.0 photo. See the Sources page for image credits and license links.

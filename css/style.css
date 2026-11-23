@@ -172,6 +172,10 @@ h1 em { color: var(--rust); font-weight: 400; }
 .timeline-year { color: var(--rust-dark); font: 700 .82rem Arial, Helvetica, sans-serif; letter-spacing: .04em; }
 .timeline-item h2 { margin: -.25rem 0 .4rem; font-size: 1.35rem; font-weight: 500; }
 .timeline-item p { max-width: 620px; margin: 0; color: var(--muted); }
+.timeline-photo { max-width: 250px; margin: 1rem 0 0; padding: .5rem; background: var(--white); box-shadow: 0 5px 16px rgba(41, 42, 37, .1); }
+.timeline-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 24%; }
+.timeline-photo figcaption, .detail-photo figcaption { padding-top: .5rem; color: var(--muted); font-size: .73rem; line-height: 1.45; }
+.timeline-photo a, .detail-photo a, .work-image a { color: var(--rust-dark); }
 
 .section-nav {
   display: flex;
@@ -198,21 +202,64 @@ h1 em { color: var(--rust); font-weight: 400; }
 .people-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 1.5rem; }
 .people-grid h3 { margin: 0 0 .25rem; color: var(--rust-dark); font-size: 1rem; font-weight: 700; }
 .people-grid p { margin: 0; color: var(--muted); font-size: .95rem; }
+.family-parents, .uncle-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.family-origins { margin: 0 0 1.25rem; padding: 1rem; border-left: 3px solid var(--olive); background: rgba(255, 253, 248, .75); }
+.family-origins h3 { margin: 0 0 .35rem; color: var(--rust-dark); font-size: 1rem; font-weight: 500; }
+.family-origins p { margin: 0; color: var(--muted); font-size: .9rem; }
+.family-card { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; border: 1px solid var(--line); background: var(--white); }
+.family-card h3 { margin: 0 0 .4rem; color: var(--rust-dark); font-size: 1.15rem; font-weight: 500; }
+.family-card p:not(.family-role):not(.portrait-note) { margin: 0; color: var(--muted); font-size: .9rem; }
+.family-role { margin: 0 0 .25rem; color: var(--olive); font: 700 .68rem Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.family-portrait { flex: 0 0 120px; margin: 0; padding: .4rem; background: var(--paper); }
+.family-portrait img { display: block; width: 100%; height: 150px; object-fit: contain; }
+.family-portrait figcaption { padding-top: .35rem; color: var(--muted); font-size: .65rem; line-height: 1.35; }
+.family-portrait a, .family-card a { color: var(--rust-dark); }
+.family-monogram { display: grid; flex: 0 0 74px; height: 74px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--paper-deep); color: var(--rust-dark); font-size: 1.2rem; }
+.family-subheading { margin: 1.8rem 0 .8rem; font-size: 1.15rem; font-weight: 500; }
+.sibling-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin: 0; padding: 0; list-style: none; counter-reset: sibling; }
+.sibling-grid li { display: grid; align-content: start; gap: .2rem; padding: .85rem 1rem; border-left: 2px solid var(--rust); background: rgba(255, 253, 248, .75); }
+.sibling-grid strong { color: var(--rust-dark); font-size: .96rem; }
+.sibling-grid span { color: var(--muted); font-size: .84rem; line-height: 1.5; }
+.family-card .portrait-note { margin: .55rem 0 0; color: var(--muted); font-size: .72rem; font-style: italic; line-height: 1.4; }
+.relationship-intro { max-width: 760px; color: var(--muted); }
+.relationship-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.4rem; }
+.relationship-card { overflow: hidden; border: 1px solid var(--line); background: var(--white); }
+.relationship-art, .relationship-portrait { display: grid; width: 100%; height: 190px; place-items: center; margin: 0; background: linear-gradient(140deg, #e6d5bd, #f3eadc 55%, #c8b497); }
+.relationship-art span { display: grid; width: 112px; height: 112px; place-items: center; border: 1px solid rgba(116, 54, 33, .45); border-radius: 50%; color: var(--rust-dark); font-size: 2rem; letter-spacing: .08em; }
+.relationship-portrait { padding: .6rem .6rem 0; }
+.relationship-portrait img { display: block; width: 100%; height: 145px; object-fit: contain; }
+.relationship-portrait figcaption { align-self: end; padding: .4rem 0 .5rem; color: var(--muted); font-size: .68rem; line-height: 1.35; }
+.relationship-portrait a { color: var(--rust-dark); }
+.relationship-copy { padding: 1rem 1.1rem 1.15rem; }
+.relationship-copy h3 { margin: 0 0 .45rem; color: var(--rust-dark); font-size: 1.15rem; font-weight: 500; }
+.relationship-copy > p:not(.relationship-period) { margin: 0; color: var(--muted); font-size: .92rem; }
+.relationship-copy .relationship-period { margin: 0 0 .35rem; color: var(--olive); font: 700 .68rem Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.relationship-copy .portrait-note { margin-top: .65rem !important; color: #777064 !important; font-size: .72rem !important; font-style: italic; }
 .event-list { display: grid; gap: .85rem; margin: 0; padding-left: 1.2rem; }
 .event-list li { padding-left: .2rem; color: var(--muted); }
 .event-list strong { color: var(--ink); }
 .detail-card .source-note { margin-top: 1.2rem; font-size: .9rem; }
 .detail-card .source-note a { color: var(--rust-dark); }
+.detail-photo { max-width: 600px; margin: 1.2rem 0; padding: .65rem; background: var(--white); box-shadow: 0 8px 22px rgba(41, 42, 37, .1); }
+.detail-photo img { display: block; width: 100%; max-height: 340px; object-fit: cover; }
 
 .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .work-card { padding: 1.5rem; border: 1px solid var(--line); background: rgba(255, 253, 248, .62); }
 .work-number { color: var(--olive); font: 700 .7rem Arial, Helvetica, sans-serif; letter-spacing: .12em; }
+.work-image { margin: 1rem 0; }
+.work-image img { display: block; width: 100%; height: 220px; padding: .5rem; background: var(--paper-deep); object-fit: contain; }
+.work-image figcaption { min-height: 2.4rem; padding-top: .45rem; color: var(--muted); font-size: .7rem; line-height: 1.4; }
 .work-card h2 { min-height: 3.2rem; margin: 1rem 0; color: var(--rust-dark); font-size: 1.45rem; font-weight: 500; line-height: 1.2; }
 .work-summary { min-height: 7rem; color: var(--muted); }
 .work-card h3 { margin: 1.3rem 0 .35rem; font: 700 .72rem Arial, Helvetica, sans-serif; letter-spacing: .09em; text-transform: uppercase; }
 .work-card h3 + p { margin-bottom: 0; color: var(--muted); font-size: .95rem; }
 
 .quiz-panel { max-width: 680px; padding: clamp(1.4rem, 5vw, 2.5rem); border: 1px solid var(--line); background: var(--white); }
+.level-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.level-option { display: grid; align-content: start; gap: .4rem; min-height: 120px; padding: 1rem; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.level-option:hover { border-color: var(--rust); background: #f4eadd; }
+.level-option strong { color: var(--rust-dark); font-size: 1.1rem; }
+.level-option span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
 .quiz-progress { margin-bottom: 1.2rem; color: var(--olive); font: 700 .78rem Arial, Helvetica, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
 .quiz-panel h2 { margin-bottom: 1.4rem; font-size: 1.55rem; font-weight: 500; line-height: 1.35; }
 .answer-list { display: grid; gap: .7rem; }
@@ -226,6 +273,8 @@ h1 em { color: var(--rust); font-weight: 400; }
 .feedback.incorrect { color: var(--rust-dark); }
 .results h2 { font-size: 2rem; }
 .results p:not(.eyebrow) { color: var(--muted); }
+.button-tertiary { margin-left: .5rem; background: var(--paper-deep); color: var(--rust-dark); }
+.button-tertiary:hover { background: #e6dac8; }
 
 .sources-panel { max-width: 760px; padding: 1.7rem; border: 1px solid var(--line); background: rgba(255, 253, 248, .62); }
 .sources-panel h2 { font-size: 1.4rem; font-weight: 500; }
@@ -250,7 +299,13 @@ h1 em { color: var(--rust); font-weight: 400; }
   .intro-section { padding: 3rem 0 3.5rem; }
   .page-main { padding-top: 3rem; }
   .people-grid { grid-template-columns: 1fr; }
+  .family-parents, .uncle-grid, .sibling-grid { grid-template-columns: 1fr; }
+  .family-card { flex-direction: column; }
+  .family-portrait { width: min(100%, 180px); }
+  .relationship-grid { grid-template-columns: 1fr; }
+  .level-grid { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
+  .work-image img { height: 280px; }
   .work-card h2, .work-summary { min-height: 0; }
 }
 
@@ -261,4 +316,5 @@ h1 em { color: var(--rust); font-weight: 400; }
   .timeline-item::before { left: -1.5rem; }
   .timeline::before { left: .38rem; }
   .page-heading { margin-bottom: 2.3rem; }
+  .button-tertiary { margin: .75rem 0 0; }
 }

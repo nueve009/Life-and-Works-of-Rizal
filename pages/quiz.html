@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Test your knowledge of José Rizal's life and works.">
   <title>Quiz | José Rizal</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/quiz.js" defer></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/quiz.js" defer></script>
 </head>
 <body>
   <!-- The same navigation appears on every page. -->
@@ -26,10 +26,27 @@
     <section class="page-heading">
       <p class="eyebrow">Check what you remember</p>
       <h1>Rizal knowledge quiz</h1>
-      <p>Ten questions, one at a time. Choose an answer to see whether you got it right.</p>
+      <p>Choose a difficulty and answer five questions about Rizal’s life and works.</p>
     </section>
     <section class="quiz-panel" aria-label="Rizal quiz">
-      <div id="quiz-content">
+      <div id="level-selection">
+        <p class="quiz-progress">Choose your difficulty</p>
+        <div class="level-grid">
+          <button class="level-option" type="button" data-level="easy">
+            <strong>Easy</strong>
+            <span>Start with key facts and dates.</span>
+          </button>
+          <button class="level-option" type="button" data-level="medium">
+            <strong>Medium</strong>
+            <span>Test your knowledge of his works and reform efforts.</span>
+          </button>
+          <button class="level-option" type="button" data-level="hard">
+            <strong>Hard</strong>
+            <span>Try more detailed questions about his studies and life.</span>
+          </button>
+        </div>
+      </div>
+      <div id="quiz-content" hidden>
         <p class="quiz-progress" id="quiz-progress" aria-live="polite"></p>
         <h2 id="question" tabindex="-1"></h2>
         <div id="answers" class="answer-list"></div>
@@ -41,6 +58,7 @@
         <h2>Your score: <span id="score"></span></h2>
         <p id="score-message"></p>
         <button id="try-again" class="button button-secondary" type="button">Try again</button>
+        <button id="choose-level" class="button button-tertiary" type="button">Choose another difficulty</button>
       </div>
     </section>
   </main>
