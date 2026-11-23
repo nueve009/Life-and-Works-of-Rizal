@@ -693,6 +693,8 @@
     const button = document.createElement("button");
     button.type = "button";
     button.className = "work-open";
+    button.id = `work-${slug}`;
+    li.id = slug;
     button.innerHTML = titleEl.outerHTML;
     button.setAttribute("aria-label", "View details for " + titleText);
     titleEl.replaceWith(button);
@@ -947,4 +949,16 @@
   });
 
   filterWorks();
+
+  // Links from the Own Words page open the matching work dialog directly.
+  function openFromHash() {
+    let slug = window.location.hash.slice(1);
+    try { slug = decodeURIComponent(slug); } catch (_) { /* keep the raw hash */ }
+    if (!slug) return;
+    const work = works.find((candidate) => candidate.slug === slug);
+    if (!work) return;
+    open(work, visibleWorks.includes(work) ? visibleWorks : works, work.trigger);
+  }
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
 })();

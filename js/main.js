@@ -23,7 +23,9 @@
       ".detail-card",
       ".work-card",
       ".sources-panel",
-      ".quiz-panel"
+      ".quiz-panel",
+      ".quote-card",
+      ".place-card"
     ].join(",");
     const elements = Array.from(document.querySelectorAll(selector));
     if (!elements.length) return;
