@@ -93,6 +93,8 @@ const levelSelection = document.getElementById("level-selection");
 const quizContent = document.getElementById("quiz-content");
 const results = document.getElementById("results");
 const progress = document.getElementById("quiz-progress");
+const progressBar = document.getElementById("quiz-progress-bar");
+const progressFill = document.getElementById("quiz-progress-fill");
 const questionHeading = document.getElementById("question");
 const answersContainer = document.getElementById("answers");
 const feedback = document.getElementById("feedback");
@@ -123,6 +125,11 @@ function showQuestion() {
   const questions = quizSets[selectedDifficulty];
   const item = questions[currentQuestion];
   progress.textContent = `${difficultyNames[selectedDifficulty]} · Question ${currentQuestion + 1} of ${questions.length}`;
+  if (progressBar && progressFill) {
+    progressBar.setAttribute("aria-valuemax", String(questions.length));
+    progressBar.setAttribute("aria-valuenow", String(currentQuestion + 1));
+    progressFill.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+  }
   questionHeading.textContent = item.question;
   answersContainer.replaceChildren();
   feedback.textContent = "";

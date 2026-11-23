@@ -6,6 +6,7 @@
   <meta name="description" content="Test your knowledge of José Rizal's life and works.">
   <title>Quiz | José Rizal</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
   <script src="../js/quiz.js" defer></script>
 </head>
 <body>
@@ -47,7 +48,12 @@
         </div>
       </div>
       <div id="quiz-content" hidden>
-        <p class="quiz-progress" id="quiz-progress" aria-live="polite"></p>
+        <div class="quiz-progress-block">
+          <p class="quiz-progress" id="quiz-progress" aria-live="polite"></p>
+          <div class="quiz-progress-bar" id="quiz-progress-bar" role="progressbar" aria-labelledby="quiz-progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+            <span class="quiz-progress-fill" id="quiz-progress-fill"></span>
+          </div>
+        </div>
         <h2 id="question" tabindex="-1"></h2>
         <div id="answers" class="answer-list"></div>
         <p id="feedback" class="feedback" aria-live="polite"></p>
