@@ -2,7 +2,7 @@
 
 An educational website that teaches people about the life and works of Dr. José Rizal, the national hero of the Philippines. Made for our Rizal integration project.
 
-**Live site:** [(https://life-and-works-of-rizal-eta.vercel.app/pages/works.html)]
+**Live site:** [(https://life-and-works-of-rizal-eta.vercel.app/pages/index.html)]
 
 ## Features
 
