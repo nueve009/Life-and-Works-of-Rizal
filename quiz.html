@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Test your knowledge of José Rizal's life and works.">
+  <title>Quiz | José Rizal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/quiz.js" defer></script>
+</head>
+<body>
+  <!-- The same navigation appears on every page. -->
+  <header class="site-header">
+    <a class="brand" href="index.html">Rizal <span>·</span> A Life of Courage</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="works.html">Works</a>
+      <a href="quiz.html" aria-current="page">Quiz</a>
+      <a href="sources.html">Sources</a>
+    </nav>
+  </header>
+
+  <!-- JavaScript fills this area with one question at a time. -->
+  <main class="page-main content-width">
+    <section class="page-heading">
+      <p class="eyebrow">Check what you remember</p>
+      <h1>Rizal knowledge quiz</h1>
+      <p>Ten questions, one at a time. Choose an answer to see whether you got it right.</p>
+    </section>
+    <section class="quiz-panel" aria-label="Rizal quiz">
+      <div id="quiz-content">
+        <p class="quiz-progress" id="quiz-progress" aria-live="polite"></p>
+        <h2 id="question" tabindex="-1"></h2>
+        <div id="answers" class="answer-list"></div>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+        <button id="next-button" class="button" type="button" hidden>Next question <span aria-hidden="true">→</span></button>
+      </div>
+      <div id="results" class="results" hidden aria-live="polite">
+        <p class="eyebrow">Quiz complete</p>
+        <h2>Your score: <span id="score"></span></h2>
+        <p id="score-message"></p>
+        <button id="try-again" class="button button-secondary" type="button">Try again</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Keep the footer consistent throughout the site. -->
+  <footer class="site-footer"><p>Made for curious learners · Learn, question, remember.</p></footer>
+</body>
+</html>
