@@ -7,7 +7,7 @@ An educational website that teaches people about the life and works of Dr. José
 ## Features
 
 - **Life timeline:** key events from his birth in Calamba (1861) to his execution in Bagumbayan (1896)
-- **Works:** illustrated summaries of _Noli Me Tangere_, _El Filibusterismo_, and _Mi Último Adiós_, plus a searchable, filterable index of all of Rizal's documented novels, poems, essays, plays, letters, translations, and other works (press `/` to focus the search; selected categories expand to full width); click any title for a detailed pop-up with an image or category icon, background, and further reading
+- **Works:** illustrated summaries of _Noli Me Tangere_, _El Filibusterismo_, and _Mi Último Adiós_, plus a searchable, filterable index of all of Rizal's documented novels, poems, essays, plays, letters, translations, and other works (press `/` to focus the search; selected categories expand to full width); click any title for a detailed pop-up with an image or category icon, background, why it matters, further reading, and the actual sourced text where it survives (full text for short poems, letters, and sonnets; clear excerpts for novels, long essays, memoirs, tales, and plays)
 - **Quiz:** easy, medium, and hard multiple-choice levels with a progress bar and answer feedback
 - **Interactive details:** smooth timeline navigation, active section highlighting, image lightbox, and a back-to-top button
 - **Visual style:** original Spanish-Filipino Baroque corner ornaments in espresso-brown line art, drawn as a scalable SVG

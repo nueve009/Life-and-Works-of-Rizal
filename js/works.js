@@ -202,6 +202,401 @@
     { label: "Sources & further reading", url: "sources.html" }
   ];
 
+  // Real passages for works whose text survives. Short works are given in full;
+  // novels and long essays use a clearly labelled excerpt. Everything here is
+  // public domain except the modern Mi Último Adiós translation, credited below.
+  const TEXT_EXCERPTS = {
+    "noli-me-tangere": {
+      label: "From the novel — dedication and opening",
+      source: "The Social Cancer, trans. Charles Derbyshire (1912), via Wikisource",
+      sourceUrl: "https://en.wikisource.org/wiki/The_Social_Cancer/Author%27s_Dedication",
+      extent: "Excerpt",
+      license: "Public domain",
+      html: `
+        <p class="work-text-subhead">Author's dedication</p>
+        <p>To My Fatherland: Recorded in the history of human sufferings is a cancer of so malignant a character that the least touch irritates it and awakens in it the sharpest pains.</p>
+        <p>… And to this end, I will strive to reproduce thy condition faithfully, without discriminations; I will raise a part of the veil that covers the evil, sacrificing to truth everything, even vanity itself, since, as thy son, I am conscious that I also suffer from thy defects and weaknesses. <em>—The Author, Europe, 1886</em></p>
+        <p class="work-text-subhead">Chapter I — A Social Gathering</p>
+        <p>On the last of October Don Santiago de los Santos, popularly known as Capitan Tiago, gave a dinner. In spite of the fact that, contrary to his usual custom, he had made the announcement only that afternoon, it was already the sole topic of conversation in Binondo and adjacent districts, and even in the Walled City, for at that time Capitan Tiago was considered one of the most hospitable of men, and it was well known that his house, like his country, shut its doors against nothing except commerce and all new or bold ideas.</p>
+        <p>Like an electric shock the announcement ran through the world of parasites, bores, and hangers-on, whom God in His infinite bounty creates and so kindly multiplies in Manila. Some looked at once for shoe-polish, others for buttons and cravats, but all were especially concerned about how to greet the master of the house in the most familiar tone, in order to create an atmosphere of ancient friendship or, if occasion should arise, to excuse a late arrival.</p>
+      `
+    },
+    "el-filibusterismo": {
+      label: "From the novel — Chapter I",
+      source: "The Reign of Greed, trans. Charles Derbyshire (1912), via Wikisource",
+      sourceUrl: "https://en.wikisource.org/wiki/The_Reign_of_Greed/Chapter_1",
+      extent: "Excerpt",
+      license: "Public domain",
+      html: `
+        <p class="work-text-subhead">Chapter I — On the Upper Deck</p>
+        <p><em>Sic itur ad astra</em></p>
+        <p>One morning in December the steamer <em>Tabo</em> was laboriously ascending the tortuous course of the Pasig, carrying a large crowd of passengers toward the province of La Laguna. She was a heavily built steamer, almost round, like the <em>tabú</em> from which she derived her name, quite dirty in spite of her pretensions to whiteness, majestic and grave from her leisurely motion. Altogether, she was held in great affection in that region, perhaps from her Tagalog name, or from the fact that she bore the characteristic impress of things in the country, representing something like a triumph over progress, a steamer that was not a steamer at all, an organism, stolid, imperfect yet unimpeachable, which, when it wished to pose as being rankly progressive, proudly contented itself with putting on a fresh coat of paint. Indeed, the happy steamer was genuinely Filipino!</p>
+        <p>Bathed in the sunlight of a morning that made the waters of the river sparkle and the breezes rustle in the bending bamboo on its banks, there she goes with her white silhouette throwing out great clouds of smoke—the Ship of State, so the joke runs, also has the vice of smoking!</p>
+      `
+    },
+    "mi-ultimo-adios": {
+      label: "The complete poem",
+      source: "Modern English translation by Edwin Agustín Lozada (2001), via Wikisource",
+      sourceUrl: "https://en.wikisource.org/wiki/My_Last_Farewell",
+      extent: "Complete text · 14 stanzas",
+      license: "Translation CC BY-SA 3.0; original Spanish public domain",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      html: `
+        <p class="poem-stanza">Farewell, beloved Country, treasured region of the sun,<br>Pearl of the sea of the Orient, our lost Eden!<br>To you eagerly I surrender this sad and gloomy life;<br>And were it brighter, fresher, more florid,<br>Even then I’d give it to you, for your sake alone.</p>
+        <p class="poem-stanza">In fields of battle, deliriously fighting,<br>Others give you their lives, without doubt, without regret;<br>The place matters not: where there’s cypress, laurel or lily,<br>On a plank or open field, in combat or cruel martyrdom,<br>It’s all the same if the home or country asks.</p>
+        <p class="poem-stanza">I die when I see the sky has unfurled its colors<br>And at last after a cloak of darkness announces the day;<br>If you need scarlet to tint your dawn,<br>Shed my blood, pour it as the moment comes,<br>And may it be gilded by a reflection of the heaven’s newly-born light.</p>
+        <p class="poem-stanza">My dreams, when scarcely an adolescent,<br>My dreams, when a young man already full of life,<br>Were to see you one day, jewel of the sea of the Orient,<br>Dry those eyes of black, that forehead high,<br>Without frown, without wrinkles, without stains of shame.</p>
+        <p class="poem-stanza">My lifelong dream, my deep burning desire,<br>This soul that will soon depart cries out: Salud!<br>To your health! Oh how beautiful to fall to give you flight,<br>To die to give you life, to die under your sky,<br>And in your enchanted land eternally sleep.</p>
+        <p class="poem-stanza">If upon my grave one day you see appear,<br>Amidst the dense grass, a simple humble flower,<br>Place it near your lips and my soul you’ll kiss,<br>And on my brow may I feel, under the cold tomb,<br>The gentle blow of your tenderness, the warmth of your breath.</p>
+        <p class="poem-stanza">Let the moon see me in a soft and tranquil light,<br>Let the dawn send its fleeting radiance,<br>Let the wind moan with its low murmur,<br>And should a bird descend and rest on my cross,<br>Let it sing its canticle of peace.</p>
+        <p class="poem-stanza">Let the burning sun evaporate the rains,<br>And with my clamor behind, towards the sky may they turn pure;<br>Let a friend mourn my early demise,<br>And in the serene afternoons, when someone prays for me,<br>O Country, pray to God also for my rest!</p>
+        <p class="poem-stanza">Pray for all the unfortunate ones who died,<br>For all who suffered torments unequaled,<br>For our poor mothers who in their grief and bitterness cry,<br>For orphans and widows, for prisoners in torture,<br>And for yourself pray that your final redemption you’ll see.</p>
+        <p class="poem-stanza">And when the cemetery is enveloped in dark night,<br>And there, alone, only those who have gone remain in vigil,<br>Disturb not their rest, nor the mystery,<br>And should you hear chords from a zither or psaltery,<br>It is I, beloved Country, singing to you.</p>
+        <p class="poem-stanza">And when my grave, then by all forgotten,<br>has not a cross nor stone to mark its place,<br>Let men plow and with a spade scatter it,<br>And before my ashes return to nothing,<br>May they be the dust that carpets your fields.</p>
+        <p class="poem-stanza">Then nothing matters, cast me in oblivion.<br>Your atmosphere, your space and valleys I’ll cross.<br>I will be a vibrant and clear note to your ears,<br>Aroma, light, colors, murmur, moan, and song,<br>Constantly repeating the essence of my faith.</p>
+        <p class="poem-stanza">My idolized country, sorrow of my sorrows,<br>Beloved Filipinas, hear my last good-bye.<br>There I leave you all, my parents, my loves.<br>I’ll go where there are no slaves, hangmen nor oppressors,<br>Where faith doesn’t kill, where the one who reigns is God.</p>
+        <p class="poem-stanza">Goodbye, dear parents, brother and sisters, fragments of my soul,<br>Childhood friends in the home now lost,<br>Give thanks that I rest from this wearisome day;<br>Goodbye, sweet foreigner, my friend, my joy;<br>Farewell, loved ones, to die is to rest.</p>
+        <p class="work-text-subhead">José Rizal, 1896</p>
+      `
+    },
+    "a-la-juventud-filipina": {
+      label: "The complete poem",
+      source: "To the Philippine Youth, trans. Charles Derbyshire (1913)",
+      sourceUrl: "https://www.joserizal.com/works/to-the-philippine-youth",
+      extent: "Complete text · 10 stanzas",
+      license: "Public domain",
+      html: `
+        <p class="poem-stanza">Hold high the brow serene, O youth, where now you stand;<br>Let the bright sheen<br>Of your grace be seen,<br>Fair hope of my fatherland!</p>
+        <p class="poem-stanza">Come now, thou genius grand,<br>And bring down inspiration;<br>With thy mighty hand,<br>Swifter than the wind’s violation,<br>Raise the eager mind to higher station.</p>
+        <p class="poem-stanza">Come down with pleasing light<br>Of art and science to the fight,<br>O youth, and there untie<br>The chains that heavy lie,<br>Your spirit free to blight.</p>
+        <p class="poem-stanza">See how in flaming zone<br>Amid the shadows thrown,<br>The Spaniard’s holy hand<br>A crown’s resplendent band<br>Proffers to this Indian land.</p>
+        <p class="poem-stanza">Thou, who now wouldst rise<br>On wings of rich emprise,<br>Seeking from Olympian skies<br>Songs of sweetest strain,<br>Softer than ambrosial rain;</p>
+        <p class="poem-stanza">Thou, whose voice divine<br>Rivals Philomel’s refrain<br>And with varied line<br>Through the night benign<br>Frees mortality from pain;</p>
+        <p class="poem-stanza">Thou, who by sharp strife<br>Wakest thy mind to life;<br>And the memory bright<br>Of thy genius’ light<br>Makest immortal in its strength;</p>
+        <p class="poem-stanza">And thou, in accents clear<br>Of Phoebus, to Apelles dear;<br>Or by the brush’s magic art<br>Takest from nature’s store a part,<br>To fix it on the simple canvas’ length;</p>
+        <p class="poem-stanza">Go forth, and then the sacred fire<br>Of thy genius to the laurel may aspire;<br>To spread around the fame,<br>And in victory acclaim,<br>Through wider spheres the human name.</p>
+        <p class="poem-stanza">Day, O happy day,<br>Fair Filipinas, for thy land!<br>So bless the Power to-day<br>That places in thy way<br>This favor and this fortune grand!</p>
+      `
+    },
+    "amor-patrio": {
+      label: "From the essay — original Spanish",
+      source: "Prosa por José Rizal, centenary edition (1961), via Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/El_Amor_Patrio",
+      lang: "es",
+      extent: "Excerpt · opening and closing",
+      license: "Public domain",
+      html: `
+        <p class="work-text-subhead">El Amor Patrio</p>
+        <p>He aquí un bello asunto y, por lo mismo que es bello, trilladísimo. Sabio, poeta, artista, labrador, comerciante o guerrero, viejo y joven, rey o esclavo, todos han pensado en él y le han dedicado los más preciados frutos de su inteligencia o de su corazón.</p>
+        <p>… Sea, pues, cualquiera nuestra situación, amémosla siempre y no deseemos otra cosa que su bien. Así obraremos con el fin de la humanidad dictado por Dios, cual es la armonía y la paz universal de sus criaturas.</p>
+        <p>Vosotros, los que habéis perdido el ideal de vuestras almas; los que, heridos en el corazón, visteis desaparecer una a una vuestras ilusiones, y semejantes a los árboles en otoño, os encontráis sin flores y sin hojas, y deseosos de amar no halláis nada digno de vosotros, ahí tenéis la patria, amadla.</p>
+        <p>Amad, ¡oh, sí! pero no ya como la amaban en otro tiempo, practicando virtudes feroces, negadas y reprobadas por una verdadera moral y por la madre naturaleza; no haciendo gala de fanatismo, de destrucción y de crueldad, no; más risueña aurora aparece en el horizonte, de luces suaves y pacíficas, mensajera de la vida y de la paz; la aurora, en fin, verdadera del cristianismo, présaga de días felices y tranquilos. Deber nuestro será seguir los áridos pero pacíficos y productivos senderos de la ciencia que conducen al progreso, y de ahí a la unión deseada y pedida por Jesucristo en la noche de su dolor.</p>
+        <p class="work-text-subhead">Laong Laan · Barcelona, Junio, 1882</p>
+      `
+    },
+    "filipinas-dentro-de-cien-anos": {
+      label: "From the essay — opening",
+      source: "The Philippines A Century Hence, trans. Charles Derbyshire (1912), via Project Gutenberg",
+      sourceUrl: "https://www.gutenberg.org/ebooks/35899",
+      extent: "Excerpt",
+      license: "Public domain in the United States",
+      html: `
+        <p>Following our usual custom of facing squarely the most difficult and delicate questions relating to the Philippines, without weighing the consequences that our frankness may bring upon us, we shall in the present article treat of their future.</p>
+        <p>In order to read the destiny of a people, it is necessary to open the book of its past, and this, for the Philippines, may be reduced in general terms to what follows.</p>
+        <p>Scarcely had they been attached to the Spanish crown than they had to sustain with their blood and the efforts of their sons the wars and ambitions of conquest of the Spanish people, and in these struggles, in that terrible crisis when a people changes its form of government, its laws, usages, customs, religion and beliefs the Philippines were depopulated, impoverished and retarded—caught in their metamorphosis, without confidence in their past, without faith in their present and with no fond hope for the years to come.</p>
+      `
+    },
+    "sobre-la-indolencia-de-los-filipinos": {
+      label: "From the essay — opening",
+      source: "The Indolence of the Filipino, trans. Charles Derbyshire (1913), via Project Gutenberg",
+      sourceUrl: "https://www.gutenberg.org/ebooks/6885",
+      extent: "Excerpt",
+      license: "Public domain in the United States",
+      html: `
+        <p>Doctor Sancianco, in his <em>Progreso de Filipinas</em>, has taken up this question, agitated, as he calls it, and, relying upon facts and reports furnished by the very same Spanish authorities that rule the Philippines, has demonstrated that such indolence does not exist, and that all said about it does not deserve reply or even passing notice.</p>
+        <p>When in consequence of a long chronic illness the condition of the patient is examined, the question may arise whether the weakening of the fibers and the debility of the organs are the cause of the malady’s continuing or the effect of the bad treatment that prolongs its action. The attending physician attributes the entire failure of his skill to the poor constitution of the patient, to the climate, to the surroundings, and so on. On the other hand, the patient attributes the aggravation of the evil to the system of treatment followed. Only the common crowd, the inquisitive populace, shakes its head and cannot reach a decision.</p>
+      `
+    },
+    "liham-sa-mga-kadalagahan-sa-malolos": {
+      label: "From the letter — original Tagalog",
+      source: "Ang Liham ni Dr. Jose Rizal sa mga Kadalagahan sa Malolos, via Project Gutenberg",
+      sourceUrl: "https://www.gutenberg.org/ebooks/17116",
+      lang: "tl",
+      extent: "Excerpt · opening",
+      license: "Public domain in the United States",
+      html: `
+        <p class="work-text-subhead">Europa, Pebrero 1889 — Sa mga kababayang dalaga sa Malolos:</p>
+        <p>Nang aking sulatin ang Noli Me Tangere, tinanong kong laon, kung ang pusuang dalaga’y karaniwan kaya diyan sa ating bayan. Matay ko mang sinaliksik yaring alaala; matay ko mang pinagisa-ngisa ang lahat ñg dalagang makilala sapul sa pagkabatá, ay mañgisa-ñgisa lamang ang sumaguing larawang aking ninanasá. Tunay at labis ang matamis na loob, ang magandang ugalí, ang binibining anyó, ang mahinhing asal; ñgunit ang lahat na ito’y laguing nahahaluan ñg lubos na pagsuyó at pagsunod sa balang sabi ó hiling nang nagñgañgalang amang kalulua: anaki’y mga lantang halaman, sibul at laki sa dilim; mamulaklak ma’y walang bañgo, magbuñga ma’y walang katas.</p>
+        <p>Ñgayong tumugon kayo sa uhaw naming sigaw ñg ikagagaling ñg bayan; ñgayong nagpakita kayo ñg mabuting halimbawa sa kapuá dalagang nagnanasang paris ninyong mamulat ang mata at mahañgo sa pagkalugamí, sumisigla ang aming pag-asa, inaaglahì ang sakuná, sa pagka at kayo’y katulong na namin, panatag ang loob sapagtatagumpay.</p>
+      `
+    },
+    "me-piden-versos": {
+      label: "The complete poem — original Spanish",
+      source: "Me piden versos, via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Me_piden_versos",
+      lang: "es",
+      extent: "Complete text · 6 stanzas · original spelling",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p class="poem-stanza">Piden que pulse la lira<br>Ha tiempo callada y rota:<br>Si ya no arranco una nota<br>Ni mi musa ya me inspira!<br>Balbuce fria y delira<br>Si la tortura mi mente;<br>Cuando rie solo miente;<br>Como miente su lamento:<br>Y es que en mi triste aislamiento<br>Mi alma ni goza ni siente.</p>
+        <p class="poem-stanza">Hubo un tiempo ... y es verdad!<br>Pero ya aquel tiempo huyo,<br>En que vate me llamo<br>La indulgencia a la amistad.<br>Ahora de aquella edad<br>El recuerdo apensas resta<br>Como quendan de una fiesta<br>Los misteriosos sonidos<br>Que retienen los oidos<br>Del bullicio de la orquesta.</p>
+        <p class="poem-stanza">Soy planta apenas crecida<br>Arrancada del Oriente,<br>Donde es perfume el ambiente,<br>Donde es un sueno la vida:<br>Patria que jamas se olvida!<br>Ensenaronme a cantar<br>Las aves, con su trinar;<br>Con su rumor, las cascadas;<br>Y en sus playas dilatadas,<br>Los murmurios de la mar.</p>
+        <p class="poem-stanza">Mientras en la infancia mia<br>Pude a su sol sonreir,<br>Dentro de mi pecho hervir<br>Volcan de fuego sentia;<br>Vate fui, porque queria<br>Con mis versos, con mi aliento,<br>Decir al rapido viento:<br>Vuela; su fama pregona!<br>Cantala de zona en zona;<br>De la tierra al firmamento!</p>
+        <p class="poem-stanza">La deje! ... mis patrios lares.<br>Arbol despojados y seco!<br>Ya no repiten el eco<br>De mis pasados cantares<br>Yo cruce los vastos mares<br>Ansiando cambiar de suerte,<br>Y mi locura no advierte<br>Que en vez del bien que buscaba,<br>El mar conmigo surcaba<br>El espectro de la muerte.</p>
+        <p class="poem-stanza">Toda mis hermosa ilusion,<br>Amor, entusiasmo, anhelo,<br>Alla quedan bajo el cielo<br>De tan florida región:<br>No pidais al corazon<br>Cantos de amor, que esta yerto;<br>Porque en medio del desierto<br>Donde discurro sin calma,<br>Siento que agoniza el alma<br>Y mi numen esta muerto.</p>
+      `
+    },
+    "por-la-educacion-recibe-lustre-la-patria": {
+      label: "From the poem — original Spanish",
+      source: "Por la educación, via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Por_la_educaci%C3%B3n",
+      lang: "es",
+      extent: "Excerpt · stanzas 2–3",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p class="poem-stanza">Por ella sacrifica su existencia<br>El mortal y el placido reposo;<br>Por ella nacer vence el arte y la ciencia<br>Que ciñen al humano lauro hermoso:<br>Y cual del alto monte en la eminencia<br>Brota el puro raudal de arroyo undoso;<br>Así la educación da sin mesura<br>A la patria do mora paz segura.</p>
+        <p class="poem-stanza">Do sabia educación trono levanta<br>Lozana juventud robusta crece<br>Que subyuga el error con firme planta<br>Y con nobles ideas se engrandece:<br>Del vicio la cerviz ella quebranta;<br>Negro crimen ante ella palidece:<br>Ella domina bárbaras naciones,<br>Y de salvajes hace campeones.</p>
+      `
+    },
+    "a-la-virgen-maria": {
+      label: "The complete sonnet — English translation",
+      source: "The hero of the Filipinos, Appendix A (1923), trans. C. E. R.",
+      sourceUrl: "https://www.gutenberg.org/ebooks/73848",
+      extent: "Complete text · 2 stanzas, OCR-normalized",
+      license: "Public domain in the United States",
+      html: `
+        <p class="poem-stanza">Dear Mary, soul of peace, our consolation,<br>That to the heavy-stricken heart doth bring<br>The cool sweet waters from the all-healing spring,<br>From that skied throne where since thy coronation<br>Our hearts are bowed in tender adoration,<br>Lean down to hear my grief’s vague whispering,<br>And o’er me, bruised and broken, deign to fling<br>The shining robe of thy serene salvation.</p>
+        <p class="poem-stanza">Thou art my mother, placid Mary; thou<br>Mine only hope, my one sure source of strength.<br>Wild is the sea and inky dark the night.<br>One beacon shines! — the star upon thy brow.<br>Sharp sin assails me; but thy look at length<br>Puts sin and grief and thoughts of death to flight!</p>
+        <p class="work-text-subhead">Written in Manila, about 1880 · translated by C. E. R.</p>
+      `
+    },
+    "a-las-flores-de-heidelberg": {
+      label: "The complete poem — English translation",
+      source: "The hero of the Filipinos, Appendix A (1923), trans. Charles Derbyshire",
+      sourceUrl: "https://www.gutenberg.org/ebooks/73848",
+      extent: "Complete text · 7 stanzas, OCR-normalized",
+      license: "Public domain in the United States",
+      html: `
+        <p class="poem-stanza">Go to my native land, go, foreign flowers,<br>Sown by the traveler on his way;<br>And there, beneath its azure sky,<br>Where all of my affections lie;<br>There from the weary pilgrim say,<br>What faith is his in that land of ours!</p>
+        <p class="poem-stanza">Go there and tell how when the dawn,<br>Her early light diffusing,<br>Your petals first flung open wide;<br>His steps beside chill Neckar drawn,<br>You see him silent by your side,<br>Upon its Spring perennial musing.</p>
+        <p class="poem-stanza">Saw how when morning’s light,<br>All your fragrance stealing,<br>Whispers to you as in mirth<br>Playful songs of love’s delight,<br>He, too, murmurs his love’s feeling<br>In the tongue he learned at birth.</p>
+        <p class="poem-stanza">That when the sun on Koenigstuhl’s height<br>Pours out its golden flood,<br>And with its slowly warming light<br>Gives life to vale and grove and wood,<br>He greets that sun, here only upraising,<br>Which in his native land is at its zenith blazing.</p>
+        <p class="poem-stanza">And tell there of that day he stood,<br>Near to a ruin’d castle gray,<br>By Neckar’s banks, or shady wood,<br>And pluck’d you from beside the way;<br>Tell, too, the tale to you addressed,<br>And how with tender care,<br>Your bending leaves he press’d<br>’Twixt pages of some volume rare.</p>
+        <p class="poem-stanza">Bear then, O flowers, love’s message bear;<br>My love to all the lov’d ones there,<br>Peace to my country — fruitful land —<br>Faith whereon its sons may stand,<br>And virtue for its daughters’ care;<br>All those beloved creatures greet,<br>That still around home’s altar meet.</p>
+        <p class="poem-stanza">And when you come unto its shore,<br>This kiss I now on you bestow,<br>Fling where the winged breezes blow;<br>That borne on them it may hover o’er<br>All that I love, esteem, and adore.<br>But though, O flowers, you come unto that land,<br>And still perchance your colors hold;<br>So far from this heroic strand,<br>Whose soil first bade your life unfold,<br>Still here your fragrance will expand;<br>Your soul that never quits the earth<br>Whose light smiled on you at your birth.</p>
+        <p class="work-text-subhead">Translated by Charles Derbyshire</p>
+      `
+    },
+    "el-canto-del-viajero": {
+      label: "The complete poem — English translation",
+      source: "The Song of the Traveler, The hero of the Filipinos, Appendix A (1923), trans. Arthur P. Ferguson",
+      sourceUrl: "https://www.gutenberg.org/ebooks/73848",
+      extent: "Complete text · 8 stanzas, OCR-normalized",
+      license: "Public domain in the United States",
+      html: `
+        <p class="poem-stanza">Like to a leaf that is fallen and withered,<br>Tossed by the tempest from pole unto pole;<br>Thus roams the pilgrim abroad without purpose,<br>Roams without love, without country or soul.</p>
+        <p class="poem-stanza">Following anxiously treacherous fortune,<br>Fortune which e’en as he grasps at it flees;<br>Vain though the hopes that his yearning is seeking,<br>Yet does the pilgrim embark on the seas!</p>
+        <p class="poem-stanza">Ever impelled by the invisible power,<br>Destined to roam from the East to the West;<br>Oft he remembers the faces of loved ones,<br>Dreams of the day when he, too, was at rest.</p>
+        <p class="poem-stanza">Chance may assign him a tomb on the desert,<br>Grant him a final asylum of peace;<br>Soon by the world and his country forgotten,<br>God rest his soul when his wanderings cease!</p>
+        <p class="poem-stanza">Often the sorrowing pilgrim is envied,<br>Circling the globe like a sea-gull above;<br>Little, ah, little they know what a void<br>Saddens his soul by the absence of love.</p>
+        <p class="poem-stanza">Home may the pilgrim return in the future,<br>Back to his loved ones his footsteps he bends;<br>Naught will he find but the snow and the ruins,<br>Ashes of love and the tomb of his friends,</p>
+        <p class="poem-stanza">Pilgrim, begone! Nor return more hereafter,<br>Stranger thou art in the land of thy birth;<br>Others may sing of their love while rejoicing,<br>Thou once again must roam o’er the earth.</p>
+        <p class="poem-stanza">Pilgrim, begone! Nor return more hereafter,<br>Dry are the tears that a while for thee ran;<br>Pilgrim, begone! And forget thine affliction,<br>Loud laughs the world at the sorrows of man.</p>
+        <p class="work-text-subhead">Translated by Arthur P. Ferguson</p>
+      `
+    },
+    "mi-retiro": {
+      label: "From the poem — opening, English translation",
+      source: "My Retreat, The hero of the Filipinos, Appendix A (1923), trans. Charles Derbyshire",
+      sourceUrl: "https://www.gutenberg.org/ebooks/73848",
+      extent: "Excerpt · first 3 stanzas, OCR-normalized",
+      license: "Public domain in the United States",
+      html: `
+        <p class="poem-stanza">By the spreading beach where the sands are soft and fine,<br>At the foot of the mount in its mantle of green,<br>I have built my hut in the pleasant grove’s confine;<br>From the forest seeking peace and a calmness divine,<br>Rest for the weary brain and silence to my sorrow keen.</p>
+        <p class="poem-stanza">Its roof the frail palm-leaf and its floor the cane,<br>Its beams and posts of the unhewn wood;<br>Little there is of value in this hut so plain,<br>And better by far in the lap of the mount to have lain,<br>By the song and the murmur of the high sea’s flood.</p>
+        <p class="poem-stanza">A purling brook from the woodland glade<br>Drops down o’er the stones and around it sweeps,<br>Whence a fresh stream is drawn by the rough cane’s aid;<br>That in the still night its murmur has made,<br>And in the day’s heat a crystal fountain leaps.</p>
+      `
+    },
+    "himno-al-trabajo": {
+      label: "From the poem — English translation",
+      source: "Hymn to Labor, Rizal’s Own Story of His Life (1918), trans. Charles Derbyshire",
+      sourceUrl: "https://www.gutenberg.org/ebooks/48438",
+      extent: "Excerpt · first 2 stanzas and chorus",
+      license: "Public domain in the United States",
+      html: `
+        <p class="work-text-subhead">Men</p>
+        <p class="poem-stanza">Now the east with light is reddening,<br>And to our fields and tasks we fare;<br>By the toil of man sustaining<br>Life and home and country there.</p>
+        <p class="poem-stanza">Though the earth be hard and stubborn,<br>And the sun unpitying glow,<br>For our country and our homes<br>Love an easy way will show.</p>
+        <p class="work-text-subhead">Chorus</p>
+        <p class="poem-stanza">For his country in peace,<br>For his country in war,<br>Let the Filipino work,<br>Let him live, let him die.</p>
+      `
+    },
+    "el-consejo-de-los-dioses": {
+      label: "From the play — opening scene, original Spanish",
+      source: "Prosa por José Rizal, centenary edition (1961), via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/El_Consejo_de_los_Dioses",
+      lang: "es",
+      extent: "Excerpt · opening scene",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>Júpiter, sentado en el trono de oro y piedras preciosas y llevando en la mano el cetro de ciprés, tiene a sus pies el águila, cuyo plumaje de acero refleja mil diversos colores: los rayos, sus terribles armas, yacen en el suelo. A su derecha está su esposa, la celosa JUNO, con refulgente diadema y el vanidoso pavo real. A su izquierda, la sabia Palas (Minerva), hija y consejera, adornada de su casco y terrible égida, ciñiendo el verde olivo y sosteniendo gallardamente su pesada lanza. Formando severo contraste está Saturno, acurrucado y mirando desde lejos tan hermoso grupo. En gracioso desorden hállase la hermosa VENUS, recostada en un lecho de rosas, coronada de oloroso mirto, y acariciando al AMOR; el divino APOLO, que pulsa blandamente su lira de oro y nácar y jugando con las ocho Musas, mientras que Marte, Belona, Alcides y Momo cierran aquel círculo escogido. Detrás de Júpiter y de Juno se hallan Hebe y Ganimedes. Hacia el lado derecho de Júpiter se halla la Justicia, sentada en su trono, teniendo en las manos sus atributos.</p>
+      `
+    },
+    "como-se-gobiernan-las-filipinas": {
+      label: "From the essay — opening, original Spanish",
+      source: "Cómo se gobiernan las Filipinas, via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/C%C3%B3mo_se_gobiernan_las_Filipinas",
+      lang: "es",
+      extent: "Excerpt · opening",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>De algunos años a esta parte el porvenir de aquellas islas preocupa, no sólo a sus habitantes que son los que están más interesados, sino también a muchos peninsulares que hasta hace muy poco ignoraban quizás su situación geográfica y la raza que las habita, etnográficamente hablando.</p>
+        <p>Todos ven, todos presienten, todos están convencidos de que aquello va mal, de que algo allí deja mucho que desear; unos lo atribuyen a una cosa, otros a otra. Los mismos partidarios del gobierno allí imperante convienen en que existen males necesarios, sin sospechar que caen en una gran ridiculez o en un atraso de ideas lamentable. Decirle a un enfermo que su enfermedad es necesaria y que no debe tratar de combatirla es volver a los primitivos tiempos de la Medicina, es confesarse impotente; médico que diga tal cosa a su paciente, debe aconsejarle consulte otras lumbreras.</p>
+      `
+    },
+    "los-viajes": {
+      label: "From the essay — opening, original Spanish",
+      source: "Los Viajes, Prosa por José Rizal, centenary edition (1961), via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/Los_Viajes",
+      lang: "es",
+      extent: "Excerpt · opening",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>¿Quién es el que no ha viajado? ¿Quién no ama los viajes, si son el sueño de la juventud al sentir por primera vez la conciencia de la vida, si son un libro para la edad madura, cuando el ansia de saber ocupa el espíritu, y, en fin, son el último adiós del anciano cuando se despide del Mundo para emprender el más misterioso de los caminos?</p>
+        <p>El viaje es un capricho en la niñez, una pasión en el joven, una necesidad en los hombres y una elegía en los ancianos.</p>
+        <p>Es tan innato en el hombre el deseo de viajar como el saber, que no parece sino que la Providencia lo ha puesto en cada uno de nosotros, para que aguijoneados por él estudiemos y admiremos sus obras, nos comuniquemos y fraternicemos los que nos hallamos separados por las distancias, y unidos formemos una sola familia, aspiración de todos los pensadores.</p>
+      `
+    },
+    "revista-de-madrid": {
+      label: "From the article — opening, original Spanish",
+      source: "Revista de Madrid, Prosa por José Rizal, centenary edition (1961), via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/Revista_de_Madrid",
+      lang: "es",
+      extent: "Excerpt · opening",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>El frío ha acentuado.</p>
+        <p>Los árboles se van despojando de sus pomposas galas, y convertidos en secos esqueletos, completan la melancolía de los nebulosos días. Una fina lluvia, un viento más fino aun, horrible, helado que viene del Guadarrama, como si este le recordase a Madrid que no en vano se levanta al norte; el piso a veces blanco y resbaladizo, una espesa niebla que envuelve todos los objetos en su blanquecino velo, dándoles un aspecto y una expresión particular, he aquí los tonos y matices de este penúltimo mes del año, las sencillas notas de su canto fúnebre entonado a la muerte de la naturaleza.</p>
+        <p>Con la caída de las hojas, van cayendo también muchos enfermos y ¡cuantos no descienden al sepulcro! Los pordioseros se han aumentado tan pronto como la estación ha traido nuevas necesidades.</p>
+      `
+    },
+    "la-vision-de-fr-rodriguez": {
+      label: "From the pamphlet — opening scene, original Spanish",
+      source: "La Visión de Fr. Rodriguez, Prosa por José Rizal, centenary edition (1961), via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/La_Visi%C3%B3n_De_Fr._Rodriguez",
+      lang: "es",
+      extent: "Excerpt · opening scene",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>Arrellanado en un cómodo sillón, y satisfecho de sí mismo y de lo que había cenado, estaba una noche Fr. José Rodriguez soñando en los cuartos que con sus libritos sacaba de los bolsillos filipinos, cuando de repente, cual si por arte de encantamiento, tomó un blanco brillantísimo la amarilla luz del quinqué, el aire se llenó de un suave perfume, y un hombre se presentó sin saberse de donde ni como vino.</p>
+        <p>Era éste un anciano de mediana estatura, moreno, delgado, cuya barba blanca contrastaba con unos ojos vivos y brillantes, que prestaban a su semblante una animación extraordinaria. Cubría sus hombros una capa pluvial, y su cabeza una mitra, que con el báculo que llevaba en la mano, le daba el aspecto de un obispo.</p>
+        <p>Al verle Fr. Rodriguez murmuró bostezando:</p>
+        <p>—¡Ensueños de mi fecunda imagi…!</p>
+        <p>La visión no le dejó concluir la frase; sacudióle con el báculo en el cogote.</p>
+        <p>—¡Eh! ¡Bromas pesadas! —exclamó el fraile cogiéndose la parte dolorida, mientras se frotaba un ojo;— ya veo que no es un sueño, pero ¡compare!</p>
+      `
+    },
+    "por-telefono": {
+      label: "From the handbill — opening, original Spanish",
+      source: "Por Teléfono, Prosa por José Rizal, centenary edition (1961), via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/Por_Tel%C3%A9fono",
+      lang: "es",
+      extent: "Excerpt · opening",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>El año de 1900 se unían por primera vez las Filipinas a la Metrópoli por medio del hilo telefónico tendido por una sociedad anglo-catalana, llamada The Trans-Oceanic Telephone Company, tan conocida en su tiempo por sus ideas verdaderamente atrevidas.</p>
+        <p>Gracias a la perfección de los aparatos se podían oir desde Madrid los suspiros místicos de los frailes, orando delante de las imágenes sagradas, sus rezos llenos de piedad, sus frases humildes, sus palabras de conformidad y resignación y hasta las acciones de gracias con que recibían las limosnas de arroz y sardinas que el pueblo les daba compadecido de sus ayunos y abstinencias. Tal era la perfección del teléfono, que se oía hasta el silencio que reinaba en los refectorios, y por el ruido de la masticación se sabía a ciencia cierta que el más glotón de los frailes no comía arriba de cinco bocados diarios.</p>
+        <p>—¡Qué pobres y qué virtuosos son estos sacerdotes! exclamaban en Madrid los demócratas conmovidos.</p>
+        <p>—¡Qué pobres y qué virtuosos son estos sacerdotes! repetía el teléfono en Filipinas y lo publicaba en todas partes, en los conventos, iglesias, etcétera.</p>
+      `
+    },
+    "makamisa": {
+      label: "From the novel — opening, original Tagalog",
+      source: "Makamisa, Prosa por José Rizal, centenary edition (1961), via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/Makamisa",
+      lang: "tl",
+      extent: "Excerpt · opening",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>Tumigil ang tugtugan at natapos ang misa ni Pare Agaton.</p>
+        <p>Humugong ang simbahan sa bulong-bulungan at sagadsaran ng̃ mg̃a chinelas ñg nag̃agsisilabas. Sagilsilan at pawisan sa init at antok, ang iba’y kukurap-kurap, ang iba’y naghihikab at ga kumukurus pa, ay nagtutulakan sa pagdukuang ñg benditang nakalagay sa dalawang mangkok na pingas, malapit sa pintuan. Sa pagdadagildilan ay may batang umaatug̃al, matandang nagmumurá at nagbubulâ ang labi, may dalagang naninikó, kunot ang noo’t pairap sa kalapit na binata, na tila bagá mauubusan ng tubig na maruming tila na putikang tirahan ng kiti-kiti. Gayon ang pagaagawang maisawsaw ang daliri, málahid man lamang maikurus sa noo, batok, puson at iba’t iba pang sangkap ng katawan. Taás ng̃ mg̃a lalaki ang hawak na salakot o sambalilo kaya, sa takot na madurog; pigil na magaling ng̃ mg̃a babai ang panyo sa ulo at baka mahulog; may nakukusamot na damit, may napupunit na manipis na kayo, may nahuhulugan ng chinelas at nagpupumilit magbalik at nang makuha, g̃uni’t nadadalá ng̃ karamihang tulak ng̃ mg̃a punong bayang lumalabas na taás ang yantok, tanda ng̃ kanilang kapangyarihan.</p>
+        <p>Ano pa’t sa isang hindi nakababatid ng̃ ugali sa katagalugan, ang dagildilang ito’t pagaagawan sa tubig ay makakatakut at maiisip na nasusunog ang simbahan, kundangan lamang at may ilang nagpatirang babaeng may loob sa Dios, na hindi lumalabas kundi nagdarasal ng̃ pasigaw at naghihiyawan na tila bagá ibig sabihin:</p>
+      `
+    },
+    "mariang-makiling": {
+      label: "From the tale — opening, original Spanish",
+      source: "Mariang Makiling, Prosa por José Rizal, centenary edition (1961), via Spanish Wikisource",
+      sourceUrl: "https://es.wikisource.org/wiki/Prosa_por_Jos%C3%A9_Rizal/Mariang_Makiling",
+      lang: "es",
+      extent: "Excerpt · opening",
+      license: "Original public domain; Wikisource transcription CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      html: `
+        <p>En mi pueblo se conserva una leyenda, la leyenda de Mariang Makíling.</p>
+        <p>Era una joven que habitaba el hermoso monte que separa las provincias de La Laguna y Tayabas. Jamás se supo a punto fijo el lugar de su morada, porque los que tuvieron la fortuna de dar con ella después de vagar mucho tiempo como perdidos en los bosques, ni han podido volver, ni han sabido encontrar el camino, ni están conformes en el sitio ni en su descripción. Mientras unos le dan por morada un hermoso palacio, brillante como un relicario de oro, rodeado de jardines y hermosos parques, otros afirman que sólo vieron una miserable choza, de techo remendado, y dindines de sawali. Semejante contradicción puede dar lugar a que se crea que tanto unos como otros mienten donosamente, es verdad; pero puede deberse también a que Mariang Makíling tuviese dos viviendas como muchas personas acomodadas.</p>
+        <p>Según testigos oculares, era ella una joven, alta, esbelta, de grandes y negros ojos, larga y abundante cabellera. Su color era un moreno limpio y claro, el Kayumanging-Kaligatan que dicen los tagalos; sus manos y pies, pequeños y delicadísimos, y la expresión de su rostro, siempre grave y seria: era una criatura fantástica, mitad ninfa, mitad sílfide, nacida a los rayos de la luna de Filipinas, en el misterio de sus augustos bosques, y al arrullo de las olas del vecino lago.</p>
+      `
+    },
+    "rizal-s-own-story-of-his-life": {
+      label: "From the memoir — My Boyhood, chapter II",
+      source: "Rizal’s Own Story of His Life, ed. Austin Craig (1918), via Project Gutenberg",
+      sourceUrl: "https://www.gutenberg.org/ebooks/48438",
+      extent: "Excerpt · My Schooling in Binan",
+      license: "Public domain in the United States",
+      html: `
+        <p>Binan is a town about one and one-half hour’s drive from my own town, Kalamba. My father was born in Binan, and he wished me to go there to continue the study of Latin, which I had just begun. He sent me over one Sunday in the care of my brother. The parting from my family was tearful on the side of my parents and my sisters, but I was nine years old and managed to hide my own tears. We reached Binan at nightfall. We went to an aunt’s house where I was to live. When the moon came up, a cousin took me around the town. Binan appeared to me large and wealthy but neither attractive nor cheerful.</p>
+        <p>My brother left me after he presented me to the schoolmaster, who, it seemed, had been his own teacher. The schoolmaster was a tall, thin man with a long neck and a sharp nose. His body leaned slightly forward. He wore a shirt of sinamay that had been woven by the deft fingers of Batangas women. He knew Latin and Spanish grammar by heart; but his severity, I believe now, was too great. This is all that I remember of him. His classroom was in his own house, only some thirty meters from my aunt’s home.</p>
+        <p>When I entered the classroom for the first time, he said to me:</p>
+        <p>“You, do you speak Spanish?”<br>“A little, sir,” I answered.<br>“Do you know Latin?”<br>“A little, sir,” I again answered.</p>
+      `
+    },
+    "memorias-de-un-estudiante-de-manila": {
+      label: "From the memoir — chapter VI, original Spanish",
+      source: "Memorias de un estudiante de Manila, chapter VI, Revista Filipina (Verano 2022), via Carayan Press",
+      sourceUrl: "https://revista.carayanpress.com/page16/page299/page291/memoriasrizal.html",
+      lang: "es",
+      extent: "Excerpt · chapter VI opening",
+      license: "Original Spanish public domain; digital edition credited to Revista Filipina / Carayan Press",
+      html: `
+        <p>Despiértate, corazón, vuelve a encender tu apagada lumbre para que a su calor recuerdes aquel tiempo al cual no me atrevo a juzgar. Ve, mente pensadora, y recorre de nuevo aquellos lugares, aquellos momentos en que bebiste junto con el néctar la amarga hiel de los amores y desengaños.</p>
+        <p>… Después de la vacaciones de aquel memorable año, busqué una casa en Intramuros y la encontré en la calle de la Solana, cuyo casero era un sacerdote. Mi madre decía que con lo que sabía, me bastaba ya, y no volviera más a Manila. ¿Habrá mi madre tenido presentimiento de lo que me iba a suceder? ¿Tendrá en efecto doble vista el corazón de las madres?</p>
+      `
+    },
+    "letters-to-ferdinand-blumentritt": {
+      label: "From a letter to Blumentritt — on Noli Me Tangere",
+      source: "The hero of the Filipinos (1923), quoting Rizal’s letter to Ferdinand Blumentritt",
+      sourceUrl: "https://www.gutenberg.org/ebooks/73848",
+      extent: "Excerpt · letter about the novel, OCR-normalized",
+      license: "Public domain in the United States",
+      html: `
+        <p>The novel tells of many things that until now have not been touched upon. They are so peculiar to ourselves that we have been sensitive about them. In this book I have attempted what no one else seems to have been willing to do. For one thing, I have dared to answer the calumnies that for centuries have been heaped upon us and upon our country.</p>
+        <p>I have written of the social condition of the Philippines and of the life of the Filipinos. I have told the truth about our beliefs, our hopes, our longings, our complaints, and our sorrows. I have tried to show the difference between real religion and the hypocrisy that under its cloak has impoverished and brutalized us.</p>
+        <p>The incidents that I have related are all true and have actually occurred.</p>
+      `
+    },
+    "tribute-to-blumentritt": {
+      label: "The last letter to Blumentritt",
+      source: "National Museum of the Philippines, Ferdinand Blumentritt",
+      sourceUrl: "http://rizal.nationalmuseum.gov.ph/scholar/ferdinand-blumentritt",
+      extent: "Complete short letter",
+      license: "Original letter public domain; English wording credited to the National Museum of the Philippines",
+      html: `
+        <p class="work-text-subhead">Fort Santiago, 29 December 1896</p>
+        <p>My dear Brother, When you receive this letter, I shall be dead by then. Tomorrow at seven, I shall be shot; but I am innocent of the crime of rebellion. I am going to die with a tranquil conscience. Adieu, my best, my dearest friend, and never think ill of me!</p>
+        <p class="work-text-subhead">José Rizal</p>
+      `
+    }
+  };
+
   // Local pictures that genuinely relate to a work. Everything else gets an icon.
   const IMAGES = {
     "noli-me-tangere": { src: "../images/noli-cover.jpg", alt: "Original cover of Noli Me Tangere", caption: "Original cover, 1887" },
@@ -317,9 +712,11 @@
     };
     const extra = EXTRA[slug] || {};
     const fallback = CATEGORY_INFO[category] || {};
+    const textInfo = TEXT_EXCERPTS[slug];
     work.searchText = [
       titleText, work.meta, work.summary, category,
-      extra.context, extra.why, fallback.context, fallback.why
+      extra.context, extra.why, fallback.context, fallback.why,
+      textInfo && textInfo.html.replace(/<[^>]*>/g, " ")
     ].filter(Boolean).join(" ").toLowerCase();
     return work;
   }).filter(Boolean);
@@ -335,6 +732,11 @@
   const prevButton = $("detail-prev");
   const nextButton = $("detail-next");
   const linksList = $("detail-links");
+  const textSection = $("detail-text-section");
+  const textLabel = $("detail-text-label");
+  const textSource = $("detail-text-source");
+  const textBody = $("detail-text");
+  const textNote = $("detail-text-note");
 
   function render(work, list) {
     currentWork = work;
@@ -351,6 +753,38 @@
     $("detail-summary").textContent = work.summary;
     $("detail-context").textContent = extra.context || fallback.context;
     $("detail-why").textContent = extra.why || fallback.why;
+
+    const textInfo = TEXT_EXCERPTS[work.slug];
+    textSection.hidden = !textInfo;
+    textBody.replaceChildren();
+    if (textInfo) {
+      textLabel.textContent = textInfo.label || "From the work";
+      textSource.replaceChildren(document.createTextNode((textInfo.source || "") + " "));
+      if (textInfo.sourceUrl) {
+        const sourceLink = document.createElement("a");
+        sourceLink.href = textInfo.sourceUrl;
+        sourceLink.target = "_blank";
+        sourceLink.rel = "noopener noreferrer";
+        sourceLink.textContent = "View source ↗";
+        textSource.append(sourceLink);
+      }
+      textBody.innerHTML = textInfo.html;
+      if (textInfo.lang) {
+        textBody.setAttribute("lang", textInfo.lang);
+      } else {
+        textBody.removeAttribute("lang");
+      }
+      const noteParts = [textInfo.extent || "Excerpt", textInfo.license].filter(Boolean);
+      textNote.replaceChildren(document.createTextNode(noteParts.join(" · ")));
+      if (textInfo.licenseUrl) {
+        const licenseLink = document.createElement("a");
+        licenseLink.href = textInfo.licenseUrl;
+        licenseLink.target = "_blank";
+        licenseLink.rel = "noopener noreferrer";
+        licenseLink.textContent = "License details ↗";
+        textNote.append(document.createTextNode(" · "), licenseLink);
+      }
+    }
 
     const art = $("detail-art");
     art.replaceChildren();

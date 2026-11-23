@@ -31,7 +31,7 @@
     </section>
     <aside class="site-disclaimer" role="note" aria-label="Project disclaimer">
       <h2>Important disclaimer</h2>
-      <p>This website was made solely to fulfill an integration project for the Rizal subject. It is not credible for citing. Please search for valid, scholarly sources and verify every date, name, and claim before using them in your own work.</p>
+      <p>This website was made solely to fulfill an integration project for the Rizal subject. It is not credible for citing. Please search for valid, scholarly sources and verify every date, name, and claim before using them in your own work. Some work detail panels include sourced text from the work, but others may not because no accessible, verified source text was available.</p>
     </aside>
     <section class="work-grid" aria-label="Featured works">
       <article class="work-card">
@@ -318,6 +318,15 @@
         <section><h3>In brief</h3><p id="detail-summary"></p></section>
         <section><h3>Background</h3><p id="detail-context"></p></section>
         <section><h3>Why it matters</h3><p id="detail-why"></p></section>
+        <!-- Filled only for works whose text is actually available. -->
+        <section class="work-text-section" id="detail-text-section" hidden>
+          <div class="work-text-heading">
+            <h3 id="detail-text-label">From the work</h3>
+            <p class="work-text-source" id="detail-text-source"></p>
+          </div>
+          <div class="work-text" id="detail-text"></div>
+          <p class="work-text-note" id="detail-text-note"></p>
+        </section>
         <section><h3>Further reading</h3><ul id="detail-links"></ul></section>
       </div>
       <div class="work-detail-nav">
