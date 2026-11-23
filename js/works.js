@@ -305,30 +305,40 @@
     li.querySelector("div").classList.add("work-body");
     li.prepend(makeThumb(slug, category, false));
 
-    return {
+    const work = {
       index: index,
       slug: slug,
       titleHtml: titleEl.innerHTML,
       summary: summaryEl.textContent.trim(),
       meta: metaEl.textContent.trim(),
       category: category,
-      trigger: button
+      trigger: button,
+      li: li
     };
+    const extra = EXTRA[slug] || {};
+    const fallback = CATEGORY_INFO[category] || {};
+    work.searchText = [
+      titleText, work.meta, work.summary, category,
+      extra.context, extra.why, fallback.context, fallback.why
+    ].filter(Boolean).join(" ").toLowerCase();
+    return work;
   }).filter(Boolean);
 
   if (!works.length) return;
 
-  let current = 0;
   let lastTrigger = null;
+  let currentWork = null;
+  let activeList = works;
+  let visibleWorks = works.slice();
 
   const closeButton = dialog.querySelector(".work-detail-close");
   const prevButton = $("detail-prev");
   const nextButton = $("detail-next");
   const linksList = $("detail-links");
 
-  function render(index) {
-    current = index;
-    const work = works[index];
+  function render(work, list) {
+    currentWork = work;
+    activeList = list;
     const extra = EXTRA[work.slug] || {};
     const fallback = CATEGORY_INFO[work.category] || {
       context: "This work is part of Rizal's wider body of writing.",
@@ -372,20 +382,27 @@
       return li;
     }));
 
-    prevButton.disabled = index === 0;
-    nextButton.disabled = index === works.length - 1;
+    const position = list.indexOf(work);
+    prevButton.disabled = position <= 0;
+    nextButton.disabled = position === list.length - 1;
     dialog.scrollTop = 0;
   }
 
-  function open(index, trigger) {
+  function open(work, list, trigger) {
     lastTrigger = trigger || null;
-    render(index);
+    render(work, list);
     if (!dialog.open) dialog.showModal();
     closeButton.focus();
   }
 
+  function step(direction) {
+    const position = activeList.indexOf(currentWork);
+    const next = activeList[position + direction];
+    if (next) render(next, activeList);
+  }
+
   works.forEach((work) => {
-    work.trigger.addEventListener("click", () => open(work.index, work.trigger));
+    work.trigger.addEventListener("click", () => open(work, visibleWorks, work.trigger));
   });
 
   // The three illustrated cards use the same detail view.
@@ -395,7 +412,10 @@
     heading.innerHTML = '<button class="work-open" type="button">' + heading.innerHTML + "</button>";
     const trigger = heading.querySelector(".work-open");
     trigger.setAttribute("aria-label", "View details for " + heading.textContent.trim());
-    trigger.addEventListener("click", () => open(work.index, trigger));
+    trigger.addEventListener("click", () => {
+      const list = visibleWorks.includes(work) ? visibleWorks : works;
+      open(work, list, trigger);
+    });
   });
 
   closeButton.addEventListener("click", () => dialog.close());
@@ -406,14 +426,86 @@
     if (lastTrigger) lastTrigger.focus({ preventScroll: true });
   });
 
-  prevButton.addEventListener("click", () => {
-    if (current > 0) render(current - 1);
-  });
-  nextButton.addEventListener("click", () => {
-    if (current < works.length - 1) render(current + 1);
-  });
+  prevButton.addEventListener("click", () => step(-1));
+  nextButton.addEventListener("click", () => step(1));
   dialog.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft" && current > 0) render(current - 1);
-    if (event.key === "ArrowRight" && current < works.length - 1) render(current + 1);
+    if (event.key === "ArrowLeft") step(-1);
+    if (event.key === "ArrowRight") step(1);
   });
+
+  // Search and category filtering.
+  const searchInput = $("work-search");
+  const clearButton = $("work-search-clear");
+  const resultCount = $("works-result-count");
+  const emptyMessage = $("works-empty");
+  const filterButtons = Array.from(document.querySelectorAll(".category-filter"));
+  const panels = Array.from(document.querySelectorAll(".works-category"));
+  let activeCategory = "all";
+
+  function matchesQuery(work, query) {
+    return !query || work.searchText.includes(query);
+  }
+
+  function filterWorks() {
+    const query = searchInput.value.trim().toLowerCase();
+    visibleWorks = works.filter((work) =>
+      (activeCategory === "all" || work.category === activeCategory) && matchesQuery(work, query)
+    );
+
+    works.forEach((work) => { work.li.hidden = !visibleWorks.includes(work); });
+    panels.forEach((panel) => {
+      const rows = Array.from(panel.querySelectorAll(".works-list li"));
+      panel.hidden = !rows.some((row) => !row.hidden);
+    });
+
+    filterButtons.forEach((button) => {
+      const category = button.dataset.category;
+      const count = works.filter((work) =>
+        (category === "all" || work.category === category) && matchesQuery(work, query)
+      ).length;
+      button.querySelector(".filter-count").textContent = count;
+      const selected = category === activeCategory;
+      button.classList.toggle("is-active", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
+
+    clearButton.hidden = !query;
+    emptyMessage.hidden = visibleWorks.length > 0;
+    resultCount.textContent = (query || activeCategory !== "all")
+      ? `Showing ${visibleWorks.length} of ${works.length} works`
+      : `Showing all ${works.length} works`;
+  }
+
+  // Press "/" to jump to search, the same shortcut used by many sites.
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "/" || event.altKey || event.ctrlKey || event.metaKey) return;
+    const target = event.target;
+    if (target && target.nodeType === 1 &&
+        (target.matches("input, textarea, select") || target.isContentEditable)) return;
+    event.preventDefault();
+    searchInput.focus();
+    searchInput.select();
+  });
+
+  searchInput.addEventListener("input", filterWorks);
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && searchInput.value) {
+      event.preventDefault();
+      searchInput.value = "";
+      filterWorks();
+    }
+  });
+  clearButton.addEventListener("click", () => {
+    searchInput.value = "";
+    filterWorks();
+    searchInput.focus();
+  });
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.category;
+      filterWorks();
+    });
+  });
+
+  filterWorks();
 })();

@@ -29,6 +29,10 @@
       <h1>Words that moved a nation</h1>
       <p>Rizal wrote novels and poetry that asked readers to look closely at injustice, identity, and hope.</p>
     </section>
+    <aside class="site-disclaimer" role="note" aria-label="Project disclaimer">
+      <h2>Important disclaimer</h2>
+      <p>This website was made solely to fulfill an integration project for the Rizal subject. It is not credible for citing. Please search for valid, scholarly sources and verify every date, name, and claim before using them in your own work.</p>
+    </aside>
     <section class="work-grid" aria-label="Featured works">
       <article class="work-card">
         <span class="work-number">01 / NOVEL</span>
@@ -79,6 +83,31 @@
         <p>Rizal wrote in Spanish, Tagalog, and English: novels, poems, essays, plays, letters, scholarly notes, translations, and even sculpture. This index gathers his documented works by form. Some titles survive only as fragments, and a few dates and attributions are still debated by historians.</p>
         <p class="index-hint">Select any title to open a closer look at the work.</p>
       </div>
+
+      <div class="works-toolbar" role="search">
+        <label class="field-label" for="work-search">Find a work</label>
+        <div class="works-search">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4.5 4.5"/></svg>
+          <input id="work-search" type="search" placeholder="Search titles, dates, or topics" autocomplete="off">
+          <kbd class="search-hint" id="work-search-hint" aria-hidden="true">/</kbd>
+          <button class="search-clear" type="button" id="work-search-clear" aria-label="Clear search" hidden>&times;</button>
+        </div>
+        <p class="field-label filter-label" id="works-filter-label">Browse by form</p>
+        <div class="category-filters" role="group" aria-labelledby="works-filter-label">
+          <button class="category-filter is-active" type="button" data-category="all" aria-pressed="true">All <span class="filter-count">123</span></button>
+          <button class="category-filter" type="button" data-category="Novels &amp; unfinished fiction" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Novels <span class="filter-count">6</span></button>
+          <button class="category-filter" type="button" data-category="Poems" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Poems <span class="filter-count">23</span></button>
+          <button class="category-filter" type="button" data-category="Plays" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Plays <span class="filter-count">3</span></button>
+          <button class="category-filter" type="button" data-category="Essays &amp; articles" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Essays <span class="filter-count">38</span></button>
+          <button class="category-filter" type="button" data-category="Letters, pamphlets &amp; documents" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Letters <span class="filter-count">23</span></button>
+          <button class="category-filter" type="button" data-category="Autobiography &amp; travel writing" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Memoirs <span class="filter-count">5</span></button>
+          <button class="category-filter" type="button" data-category="History, language &amp; science" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>History &amp; science <span class="filter-count">15</span></button>
+          <button class="category-filter" type="button" data-category="Tales &amp; translations" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Tales <span class="filter-count">4</span></button>
+          <button class="category-filter" type="button" data-category="Visual art &amp; sculpture" aria-pressed="false"><span class="filter-dot" aria-hidden="true"></span>Art <span class="filter-count">6</span></button>
+        </div>
+        <p class="works-result-count" id="works-result-count" role="status" aria-live="polite">Showing all 123 works</p>
+      </div>
+      <p class="works-empty" id="works-empty" hidden>No works match that search. Try a different word or choose another category.</p>
 
       <div class="index-grid">
         <article class="works-category">
