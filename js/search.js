@@ -48,10 +48,10 @@
     '    <h2 id="site-search-title">Search this site</h2>',
     '    <button class="site-search-close" type="button" aria-label="Close search">&times;</button>',
     "  </div>",
-    '  <label class="site-search-label" for="site-search-input">Find a person, place, work, or idea</label>',
+    '  <label class="site-search-label" for="site-search-input">Find a person, place, work, film, or idea</label>',
     '  <input id="site-search-input" class="site-search-input" type="search" autocomplete="off" spellcheck="false"',
     '    role="combobox" aria-autocomplete="list" aria-expanded="false"',
-    '    placeholder="Try Dapitan, ophthalmology, Mi Último Adiós" aria-controls="site-search-results">',
+    '    placeholder="Try Dapitan, Bayaning 3rd World, Mi Último Adiós" aria-controls="site-search-results">',
     '  <p id="site-search-count" class="site-search-count" aria-live="polite"></p>',
     '  <div id="site-search-results" class="site-search-results" role="listbox" aria-label="Search results"></div>',
     '  <p class="site-search-hint">Use ↑ / ↓ to move, Enter to open, Esc to close.</p>',
@@ -105,7 +105,7 @@
 
     const query = input.value.trim();
     if (query.length < 2) {
-      count.textContent = `Search across ${entries.length} timeline, work, quote, place, and quiz entries.`;
+      count.textContent = `Search across ${entries.length} timeline, work, quote, movie, place, and quiz entries.`;
       return;
     }
     if (!matches.length) {

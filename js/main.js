@@ -25,6 +25,7 @@
       ".sources-panel",
       ".quiz-panel",
       ".quote-card",
+      ".movie-card",
       ".place-card"
     ].join(",");
     const elements = Array.from(document.querySelectorAll(selector));

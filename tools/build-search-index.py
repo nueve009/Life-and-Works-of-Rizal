@@ -80,6 +80,11 @@ pages = [
         "quotes.html",
     ),
     (
+        "Movies",
+        "Films and documentaries that portray José Rizal, from early silent biopics to modern ensemble dramas.",
+        "movies.html",
+    ),
+    (
         "Quiz",
         "Ten-question quizzes at easy, medium, hard, and mixed-review levels.",
         "quiz.html",
@@ -194,6 +199,35 @@ for number, match in enumerate(
             "title": title,
             "text": text,
             "url": f"quotes.html#{quote_id}",
+        }
+    )
+
+# Films and documentaries that portray Rizal (not adaptations of his books).
+movies_html = read("pages/movies.html")
+for movie_id, _movie_type, card in re.findall(
+    r'<article class="movie-card" id="([^"]+)" data-type="([^"]+)">([\s\S]*?)</article>',
+    movies_html,
+):
+    heading = re.search(r"<h2>(.*?)</h2>", card, re.S)
+    if not heading:
+        continue
+    meta = re.search(r'<p class="movie-meta">(.*?)</p>', card, re.S)
+    role = re.search(r'<p class="movie-role">(.*?)</p>', card, re.S)
+    why = re.search(r'<p class="movie-why">(.*?)</p>', card, re.S)
+    entries.append(
+        {
+            "type": "Movie",
+            "title": clean(heading.group(1)),
+            "text": " ".join(
+                part
+                for part in [
+                    clean(meta.group(1) if meta else ""),
+                    clean(role.group(1) if role else ""),
+                    clean(why.group(1) if why else ""),
+                ]
+                if part
+            ),
+            "url": f"movies.html#{movie_id}",
         }
     )
 

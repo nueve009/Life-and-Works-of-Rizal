@@ -847,7 +847,7 @@ h1 em { color: var(--rust); font-weight: 400; }
   font-size: .9rem;
 }
 .quotes-note strong { color: var(--rust-dark); }
-.quotes-controls {
+.quotes-controls, .movie-controls {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -855,8 +855,8 @@ h1 em { color: var(--rust); font-weight: 400; }
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-.quote-filters, .place-filters { display: flex; flex-wrap: wrap; gap: .45rem; }
-.quote-filter, .place-filter {
+.quote-filters, .place-filters, .movie-filters { display: flex; flex-wrap: wrap; gap: .45rem; }
+.quote-filter, .place-filter, .movie-filter {
   display: inline-flex;
   align-items: center;
   gap: .45rem;
@@ -870,7 +870,7 @@ h1 em { color: var(--rust); font-weight: 400; }
   cursor: pointer;
   transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
 }
-.quote-filter-count, .place-filter-count {
+.quote-filter-count, .place-filter-count, .movie-filter-count {
   padding: .05rem .4rem;
   border-radius: 999px;
   background: var(--paper-deep);
@@ -878,19 +878,20 @@ h1 em { color: var(--rust); font-weight: 400; }
   font-size: .7rem;
   line-height: 1.5;
 }
-.quote-filter:hover, .place-filter:hover { border-color: var(--rust); background: #fdf7ef; color: var(--rust-dark); transform: translateY(-2px); box-shadow: 0 5px 12px rgba(116, 54, 33, .1); }
-.quote-filter.is-active, .place-filter.is-active {
+.quote-filter:hover, .place-filter:hover, .movie-filter:hover { border-color: var(--rust); background: #fdf7ef; color: var(--rust-dark); transform: translateY(-2px); box-shadow: 0 5px 12px rgba(116, 54, 33, .1); }
+.quote-filter.is-active, .place-filter.is-active, .movie-filter.is-active {
   border-color: var(--rust-dark);
   background: linear-gradient(145deg, var(--rust), var(--rust-dark));
   color: var(--white);
   box-shadow: 0 4px 12px rgba(116, 54, 33, .22);
 }
 .quote-filter.is-active .quote-filter-count,
-.place-filter.is-active .place-filter-count { background: rgba(255, 255, 255, .18); color: var(--white); }
-.quote-filter:focus-visible, .place-filter:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
-.quotes-tools { display: flex; align-items: center; gap: 1rem; }
-.quotes-tools p { margin: 0; color: var(--muted); font-size: .85rem; }
-.quotes-tools .button { white-space: nowrap; }
+.place-filter.is-active .place-filter-count,
+.movie-filter.is-active .movie-filter-count { background: rgba(255, 255, 255, .18); color: var(--white); }
+.quote-filter:focus-visible, .place-filter:focus-visible, .movie-filter:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+.quotes-tools, .movie-tools { display: flex; align-items: center; gap: 1rem; }
+.quotes-tools p, .movie-tools p { margin: 0; color: var(--muted); font-size: .85rem; }
+.quotes-tools .button, .movie-tools .button { white-space: nowrap; }
 .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); gap: 1rem; align-items: stretch; }
 .quote-card {
   display: flex;
@@ -945,6 +946,59 @@ h1 em { color: var(--rust); font-weight: 400; }
   color: var(--muted);
   font-size: .9rem;
 }
+
+/* Rizal on screen: films and documentaries that portray him. */
+.movies-note {
+  margin: -1.2rem 0 2rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--rust);
+  border-radius: 0 6px 6px 0;
+  background: var(--white);
+  box-shadow: 0 3px 10px rgba(41, 42, 37, .04);
+  color: var(--muted);
+  font-size: .9rem;
+}
+.movies-note strong { color: var(--rust-dark); }
+.movies-note a { color: var(--rust-dark); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.site-disclaimer + .movies-note { margin-top: -1.4rem; }
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); gap: 1rem; align-items: stretch; }
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--rust);
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 0 4px 14px rgba(41, 42, 37, .05);
+  scroll-margin-top: 7rem;
+  transition: opacity .55s ease, transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+}
+.movie-card:focus-within { outline: 2px solid var(--rust); outline-offset: 3px; }
+.movie-badge {
+  align-self: flex-start;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  background: var(--paper-deep);
+  color: var(--olive);
+  font: 700 .68rem/1.4 Arial, Helvetica, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.movie-meta { margin: .85rem 0 .35rem; color: var(--muted); font: .78rem/1.5 Arial, Helvetica, sans-serif; }
+.movie-card h2 { margin: 0 0 .8rem; color: var(--rust-dark); font-size: 1.35rem; font-weight: 500; line-height: 1.25; }
+.movie-role { margin: 0 0 .85rem; font-size: .92rem; }
+.movie-role strong { color: var(--ink); }
+.movie-why { margin: 0 0 1.2rem; color: var(--muted); font-size: .95rem; }
+.movie-source {
+  margin: auto 0 0;
+  padding-top: .75rem;
+  border-top: 1px solid var(--line);
+  font: 700 .8rem Arial, Helvetica, sans-serif;
+}
+.movie-source a { color: var(--rust-dark); text-decoration: none; }
+.movie-source a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.movie-grid + .movies-note { margin: 2rem 0 0; }
 
 /* Interactive places explorer. */
 .places-explorer {
@@ -1280,7 +1334,8 @@ h1 em { color: var(--rust); font-weight: 400; }
     border-color: #cbb89e;
     box-shadow: 0 12px 26px rgba(41, 42, 37, .09);
   }
-  .quote-card:hover {
+  .quote-card:hover,
+  .movie-card:hover {
     transform: translateY(-3px);
     border-color: #cbb89e;
     box-shadow: 0 12px 26px rgba(41, 42, 37, .09);

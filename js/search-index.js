@@ -31,6 +31,12 @@ window.RIZAL_SEARCH_INDEX = [
   },
   {
     "type": "Page",
+    "title": "Movies",
+    "text": "Films and documentaries that portray José Rizal, from early silent biopics to modern ensemble dramas.",
+    "url": "movies.html"
+  },
+  {
+    "type": "Page",
     "title": "Quiz",
     "text": "Ten-question quizzes at easy, medium, hard, and mixed-review levels.",
     "url": "quiz.html"
@@ -970,6 +976,78 @@ window.RIZAL_SEARCH_INDEX = [
     "title": "Quotation 18: Last letter to Ferdinand Blumentritt · 1896",
     "text": "Memory & friendship — Adieu, my best, my dearest friend, and never think ill of me!",
     "url": "quotes.html#quote-18"
+  },
+  {
+    "type": "Movie",
+    "title": "La vida de José Rizal",
+    "text": "1912 · Directed by Edward Gross · Philippines Rizal: Honorio Lopez Often cited as the first feature film produced in the Philippines, this silent picture traces Rizal from his childhood in Calamba to his execution at Bagumbayan.",
+    "url": "movies.html#movie-la-vida"
+  },
+  {
+    "type": "Movie",
+    "title": "Ang Buhay at Pag-ibig ni Dr. Jose Rizal",
+    "text": "1956 · Directed by Ramon A. Estella · Philippines Rizal: Eddie del Mar A three-hour life-and-loves epic that became closely associated with its lead actor. Del Mar’s performance won the FAMAS Best Actor award for 1956.",
+    "url": "movies.html#movie-buhay-at-pag-ibig"
+  },
+  {
+    "type": "Movie",
+    "title": "Rizal sa Dapitan",
+    "text": "1997 · Directed by Tikoy Aguiluz · Philippines Rizal: Albert Martinez A quiet, intimate look at the four exile years: Rizal builds a school, treats patients, maps the coast, and falls in love with Josephine Bracken. It won twelve awards at the 1997 Manila Film Festival.",
+    "url": "movies.html#movie-rizal-sa-dapitan"
+  },
+  {
+    "type": "Movie",
+    "title": "José Rizal",
+    "text": "1998 · Directed by Marilou Diaz-Abaya · Philippines Rizal: Cesar Montano (young Rizal: Dominic Guinto) The best-known Rizal biopic tells his story in flashbacks from prison to execution, weaving in scenes from his novels. It swept the 1998 Metro Manila Film Festival and travelled to Berlin, Toronto, and Chicago.",
+    "url": "movies.html#movie-jose-rizal"
+  },
+  {
+    "type": "Movie",
+    "title": "Bayaning 3rd World",
+    "text": "1999 / 2000 · Directed by Mike de Leon · Philippines Rizal: Joel Torre Two fictional filmmakers interview Rizal’s family, Josephine Bracken, a Jesuit priest, and Rizal himself. The black-and-white film asks what can and cannot be known about a national hero; it won six Gawad Urian awards, including Best Picture.",
+    "url": "movies.html#movie-bayaning-3rd-world"
+  },
+  {
+    "type": "Movie",
+    "title": "Sisa",
+    "text": "1999 · Directed by Mario O’Hara · Philippines Rizal: Gardo Versoza Writer-director Mario O’Hara imagines Rizal meeting Sisa, the fictional mother from Noli Me Tangere . It is a deliberate blurring of author, character, and history rather than a conventional biography.",
+    "url": "movies.html#movie-sisa"
+  },
+  {
+    "type": "Movie",
+    "title": "Enteng Kabisote 4: Okay Ka, Fairy Ko… The Beginning of the Legend",
+    "text": "2007 · Fantasy comedy · Philippines Rizal: Jomari Yllana Not a history lesson: Rizal turns up in a fantasy-comedy franchise. It is included here because the image of Rizal keeps reappearing in popular entertainment, not just in solemn biopics.",
+    "url": "movies.html#movie-enteng-kabisote-4"
+  },
+  {
+    "type": "Movie",
+    "title": "Bonifacio: Ang Unang Pangulo",
+    "text": "2014 · Directed by Enzo Williams · Philippines Rizal: Jericho Rosales This Bonifacio-centred drama begins with the 1872 executions and the founding of La Liga Filipina. Rizal appears briefly as the reformist whose arrest helps push Bonifacio toward revolution.",
+    "url": "movies.html#movie-bonifacio"
+  },
+  {
+    "type": "Movie",
+    "title": "GomBurZa",
+    "text": "2023 · Directed by Pepe Diokno · Philippines Rizal: Khalil Ramos (young Rizal: Alexandre Lucas Martin) The film centres on Gomez, Burgos, and Zamora, but Rizal frames their story: as a boy he hears their fate, and in the epilogue he dedicates El Filibusterismo to their memory.",
+    "url": "movies.html#movie-gomburza"
+  },
+  {
+    "type": "Movie",
+    "title": "Jose Rizal: The Pride of the Malay Rice",
+    "text": "1995 · Philippine Centennial production Portrayed by: Pen Medina One of two centennial documentaries in which Pen Medina took the role of Rizal. It sits alongside the better-known feature films as an example of screen Rizal made for study and commemoration.",
+    "url": "movies.html#movie-pride-of-the-malay-rice"
+  },
+  {
+    "type": "Movie",
+    "title": "Jose Rizal: Ang Buhay ng Isang Bayani",
+    "text": "1996 · Directed by Butch Nolasco · Philippines Portrayed by: Pen Medina Another centennial documentary, described in film histories as a moving account of Rizal’s life. It is a useful reminder that “Rizal on screen” also means educational film, not only theatrical drama.",
+    "url": "movies.html#movie-buhay-ng-isang-bayani"
+  },
+  {
+    "type": "Movie",
+    "title": "Jose Rizal: The First Hero",
+    "text": "2012 · Directed by Paolo Abella · Philippines Focus: the man behind the monument Part of a series on Philippine national heroes, this documentary aims to show a more human side of Rizal before his death. It was also released as part of a GMA News and Public Affairs Rizal collection.",
+    "url": "movies.html#movie-first-hero"
   },
   {
     "type": "Place",
