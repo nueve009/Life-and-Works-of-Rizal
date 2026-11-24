@@ -4,6 +4,8 @@ An educational website that teaches people about the life and works of Dr. José
 
 **Live site:** [(https://life-and-works-of-rizal-eta.vercel.app/pages/index.html)]
 
+**Companion essay:** [ESSAY.md](ESSAY.md) explains how the project adds to and changes prevailing views about Rizal.
+
 ## Features
 
 - **Life timeline:** key events from his birth in Calamba (1861) to his execution in Bagumbayan (1896)
@@ -29,6 +31,7 @@ No frameworks or installs needed.
 
 ```
 ├── index.html        # Redirects to the pages folder
+├── ESSAY.md          # Companion essay on the project's view of Rizal
 ├── pages/
 │   ├── index.html    # Home page
 │   ├── timeline.html # Life timeline
