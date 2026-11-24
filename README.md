@@ -12,7 +12,7 @@ An educational website that teaches people about the life and works of Dr. José
 - **Works:** illustrated summaries of _Noli Me Tangere_, _El Filibusterismo_, and _Mi Último Adiós_, plus a searchable, filterable index of all of Rizal's documented novels, poems, essays, plays, letters, translations, and other works (press `/` to focus the search; selected categories expand to full width); click any title for a detailed pop-up with an image or category icon, background, why it matters, further reading, and the actual sourced text where it survives (full text for short poems, letters, and sonnets; clear excerpts for novels, long essays, memoirs, tales, and plays)
 - **Places:** interactive geographic maps (Natural Earth outlines with latitude/longitude pins) for the Philippines and Europe, plus a location list linking Calamba, Dapitan, Madrid, Berlin, and other places to the relevant timeline and work entries
 - **Own Words:** theme-filtered quotations from the sourced work texts, each with its translator/edition credit and a link back to the full work dialog
-- **Movies:** a filterable guide to films and documentaries that portray Rizal, from the 1912 silent biopic to 2023's _GomBurZa_, with cast notes and source links
+- **Movies:** a filterable guide to films and documentaries that portray Rizal, from the 1912 silent biopic to 2023's _GomBurZa_, with original poster illustrations, preview links where available, cast notes, and source links
 - **Quiz:** easy, medium, hard, and mixed-review levels with ten questions each, answer explanations, study links, and a progress bar
 - **Site-wide search:** a search dialog available from every page (button in the navigation or Ctrl/Cmd+K) covering pages, timeline entries, works, sourced work excerpts, quotations, movies, places, and quiz questions
 - **Interactive details:** smooth timeline navigation, active section highlighting, image lightbox, and a back-to-top button
@@ -55,7 +55,12 @@ No frameworks or installs needed.
 │   └── quiz.js       # Quiz logic
 ├── tools/
 │   └── build-search-index.py # Regenerates js/search-index.js
-└── images/           # Pictures used on the site
+└── images/
+    ├── movie-art-biopic.svg   # Original movie card illustrations
+    ├── movie-art-reimagined.svg
+    ├── movie-art-supporting.svg
+    ├── movie-art-documentary.svg
+    └── ...           # Other pictures used on the site
 ```
 
 ## How to run
